@@ -1,0 +1,19 @@
+.headertablesection{
+    font-family: 'Raleway'!important;
+font-style: normal!important;
+font-weight: 500!important;
+font-size: 16px!important;
+line-height: 150%!important;
+color: #6E7F8C!important;
+}
+.fortablebody{
+font-style: normal!important;
+white-space: nowrap !important;
+font-weight: 400!important;
+font-size: 16px!important;
+line-height: 19px!important;
+color: #0E293F!important;
+}
+.tableiconbtn{
+    background: #F2F4F4 !important;
+}

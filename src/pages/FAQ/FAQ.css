@@ -1,0 +1,71 @@
+.FAQsummary {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 30px;
+}
+
+.updatetos {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 30px;
+  color: #00629E;
+  background-color: transparent;
+}
+
+.forfaqquestion {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 22px;
+}
+
+.forbg-faq {
+  background-color: #F7F9FC !important;
+  /* opacity: 0.9; */
+}
+
+.fordeletefaq {
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 20px;
+  /* identical to box height */
+  color: #c23b00;
+}
+
+.forupdatefaq {
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 20px;
+  color: #20aef3;
+}
+/* Add new section */
+.forfaqquestionss{
+  font-style: normal;
+font-weight: 400;
+font-size: 18px;
+line-height: 22px;
+color: #94A0B4;
+}
+.forfaqtextarea{
+  font-style: normal;
+font-weight: 400;
+font-size: 20px;
+line-height: 24px;
+color: #94A0B4;
+}
+.AddFAQbtn{
+  font-style: normal;
+font-weight: 700;
+font-size: 18px;
+line-height: 120%;
+}
+.forbreadcrumbtext{
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 22px;
+}

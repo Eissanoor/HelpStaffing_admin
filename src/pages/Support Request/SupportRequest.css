@@ -1,0 +1,108 @@
+.Supportheading {
+    font-weight: 600;
+    font-size: 26px;
+    line-height: 31px;
+}
+
+.Supportheadprog {
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 22px;
+    /* identical to box height */
+
+
+    /* grey 50 */
+
+    color: #94A0B4;
+}
+
+.tablehadsupport {
+    font-weight: 400 !important;
+    font-size: 20px !important;
+    line-height: 24px !important;
+    color: #455A64 !important;
+    white-space: nowrap !important;
+}
+.fortableposition{
+    white-space: nowrap !important;
+}
+.fortbbodysupportID {
+    font-weight: 500 !important;
+    font-size: 20px !important;
+    line-height: 24px !important;
+    color: #455A64 !important;
+}
+
+.fortbbodysupportname {
+    font-weight: 500 !important;
+    font-size: 16px !important;
+    line-height: 20px !important;
+}
+
+.fortbbodysupportsolved {
+    font-weight: 500 !important;
+    font-size: 20px !important;
+    line-height: 24px !important;
+    color: #02A099 !important;
+    text-align: end !important;
+}
+
+.colorblue {
+    color: #00629E !important;
+}
+
+/* Support message section */
+.SupportheadingError {
+    font-weight: 500 !important;
+    font-size: 22px !important;
+    line-height: 27px;
+}
+
+.namemessage {
+    font-weight: 500 !important;
+    font-size: 20px !important;
+    line-height: 19px !important;
+}
+
+.datamessage {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 17px;
+    color: #293345;
+}
+
+.promessage {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 20px;
+}
+
+.solvedmark {
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 30px;
+}
+.message{
+    height: 100vh;
+    overflow: auto;
+}
+.icon {
+left: 94%;
+}
+.sandicon{
+    left: 97%;
+}
+#message{
+    font-weight: 400;
+font-size: 14px;
+line-height: 20px;
+
+color: #666668;
+}
+#message:focus{
+    border:none;
+    outline: none !important;
+}
+#message::placeholder{
+    border: none;
+}

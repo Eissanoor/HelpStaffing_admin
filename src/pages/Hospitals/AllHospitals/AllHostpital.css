@@ -1,0 +1,31 @@
+.Healthcard3{
+    background: rgba(2, 160, 153, 0.1);
+    border: 0.5px solid #02A099;
+}
+
+.Postednumber{
+    font-family: 'Lato';
+font-style: normal;
+font-weight: 500;
+font-size: 26px;
+line-height: 31px;
+
+/* Secondary color */
+
+color: #02A099;
+}
+.Healthcard4{
+    background: rgba(179, 0, 0, 0.1);
+    border: 0.5px solid #B30000;
+}
+
+.Completedjobnumber{
+    font-family: 'Lato';
+font-style: normal;
+font-weight: 500;
+font-size: 26px;
+line-height: 31px;
+
+color: #B30000;
+
+}

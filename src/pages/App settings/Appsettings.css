@@ -1,0 +1,90 @@
+.ant-collapse
+  > .ant-collapse-item
+  > .ant-collapse-header
+  .ant-collapse-header-text {
+  font-weight: 700;
+  font-size: 22px;
+  line-height: 26px;
+  font-style: normal;
+  font-family: "Raleway", sans-serif !important;
+  color: #474647;
+}
+
+.appsettingheadertable {
+  font-weight: 500 !important;
+  font-size: 22px !important;
+  line-height: 26px !important;
+
+  color: #94a0b4 !important;
+}
+
+.appsettingtablebody {
+  font-weight: 400 !important;
+  font-size: 20px !important;
+  line-height: 23px;
+  /* Answer text */
+  color: #474647 !important;
+}
+
+.appentriess {
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 120%;
+
+  color: #424d61;
+}
+
+/* speciality section */
+.specialitypro {
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 23px;
+  color: #474647;
+}
+
+.addspecilition {
+  background: #00629e;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 120%;
+}
+.ActiveUsercolorchage {
+  background-color: #00629e !important;
+  color: white;
+  border: 1px solid #00629e;
+  border-radius: 50px;
+  padding: 10px 15px;
+  font-family: "Cera Pro";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 18px;
+  margin-left: 12px;
+  cursor: pointer !important;
+}
+.NonActiveUsercolorchage {
+  background: #ffffff;
+  color: #00629e;
+  border: 1px solid #00629e;
+  border-radius: 50px;
+  padding: 10px 15px;
+  font-family: "Cera Pro";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 18px;
+  margin-left: 12px;
+  cursor: pointer !important;
+}
+.NonActiveUser:hover{
+    background-color: #00629e;
+    color: white;
+}
+.NonActiveUsercolorchage:active {
+    background-color: #00629e;
+    color: white;
+}
+.NonActiveUsercolorchage::before {
+        background-color: #00629e;
+        color: white;
+}

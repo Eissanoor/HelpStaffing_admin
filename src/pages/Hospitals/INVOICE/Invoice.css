@@ -1,0 +1,61 @@
+.INVOICE{
+font-style: normal;
+font-weight: 500;
+font-size: 22px;
+line-height: 28px;
+color: #474647;
+}
+.prograpINVOICE{
+font-style: normal;
+font-weight: 500;
+font-size: 24px;
+line-height: 30px;
+}
+.lastdeatilsdata{
+    font-style: normal;
+font-weight: 500;
+font-size: 18px;
+line-height: 23px;
+}
+.tableheaderfirst{
+font-style: normal;
+font-weight: 500;
+font-size: 22px;
+line-height: 28px;
+color: #474647;
+}
+.tableheader{
+font-style: normal;
+font-weight: 500;
+font-size: 22px;
+line-height: 28px;
+}
+.tablebodys{
+font-style: normal;
+font-weight: 500;
+font-size: 16px;
+line-height: 20px;
+}
+.footer1{
+font-style: normal;
+font-weight: 500;
+font-size: 22px;
+line-height: 28px;
+color: #94A0B4;
+}
+/* button */
+.sandInvoice{
+    background: #00629E;
+font-style: normal;
+font-weight: 700;
+font-size: 18px;
+line-height: 120%;
+}
+.Download{
+    background: #F7F9FC;
+    color: #00629E;
+    font-style: normal;
+font-weight: 700;
+font-size: 18px;
+line-height: 120%;
+}

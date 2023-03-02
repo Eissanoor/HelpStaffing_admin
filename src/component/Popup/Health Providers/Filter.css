@@ -1,0 +1,21 @@
+.MBBSfilter{
+    background: #00629E;
+     font-family: 'Roboto', sans-serif !important;
+font-style: normal;
+font-weight: 500;
+font-size: 14px;
+line-height: 18px;
+}
+.FCPSfilter{
+     font-family: 'Roboto', sans-serif !important;
+font-style: normal;
+font-weight: 500;
+font-size: 14px;
+line-height: 18px;
+color: #94A0B4;
+border: 1px solid #00629E;
+}
+.css-iljtu2-MuiRating-root{
+    color: #00629E!important;
+    /* border: 1px solid white !important; */
+}

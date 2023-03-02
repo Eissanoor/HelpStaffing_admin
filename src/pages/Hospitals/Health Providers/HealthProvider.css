@@ -1,0 +1,260 @@
+.Healthheading {
+    font-family: 'Lato';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 22px;
+}
+
+.Healthnumber {
+    font-family: 'Lato';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 26px;
+    line-height: 31px;
+}
+
+.Healtharrow {
+    font-family: 'Lato';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 19px;
+    color: #00629E;
+}
+
+.Healthcard1 {
+    background: rgba(169, 200, 36, 0.1);
+    border: 1px solid #A9C824;
+}
+
+.Healthcard2 {
+    background: rgba(162, 88, 200, 0.1);
+    border: 0.5px solid #A258C8;
+}
+
+/* HealthProvidersDetails section */
+.namedhealth {
+    font-style: normal;
+    font-weight: 700;
+    font-size: 22px;
+    line-height: 28px;
+    line-height: 10px;
+}
+
+.gander {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 10px;
+}
+
+.ratehealth {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 10px;
+
+    color: #474647;
+}
+
+.forpackagehistory {
+    font-style: normal;
+    font-weight: 700;
+    font-size: 22px;
+    line-height: 28px;
+}
+
+.forpendingdescription {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 23px;
+}
+
+.forcontactinfo {
+    font-style: normal;
+    font-weight: 500 !important;
+    font-size: 16px !important;
+    line-height: 20px !important;
+
+    /* Answer text */
+
+    color: #474647 !important;
+
+}
+
+.forcontactinfoa {
+    font-style: normal;
+    font-weight: bolder !important;
+    font-size: 16px !important;
+    line-height: 20px !important;
+}
+
+/* Step section */
+.titledascription {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 25px;
+
+    /* Grey/500 */
+
+    color: #94A0B4;
+}
+
+.qualificationsdetails {
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 10px;
+}
+
+/* card section */
+.carssectiondetails1 {
+    font-style: normal;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 10px;
+}
+
+.carssectiondetails2 {
+    font-style: normal;
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 10px;
+}
+
+.carssectiondetails3 {
+    font-style: normal;
+    font-weight: 300;
+    font-size: 14px;
+    line-height: 13px;
+}
+
+/* Reviews */
+.apprating {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 24px;
+}
+
+.app-star {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 19px;
+
+    color: #474647;
+}
+
+.app-review {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 17px;
+
+    color: #7A7A7C;
+}
+
+/* Detailprofile card */
+.forclientnames {
+    font-weight: 900;
+    font-size: 14px;
+    line-height: 140%;
+    order: 0;
+    flex-grow: 1;
+}
+
+.forclientemail {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 140%;
+    display: flex;
+    color: rgba(60, 60, 67, 0.5);
+}
+
+.forhostcomment {
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 140%;
+}
+
+.seebtn {
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 120%;
+}
+
+/* Chart section */
+.Analytics{
+    font-weight: 700;
+font-size: 22px;
+line-height: 28px;
+}
+.chartbr1 {
+    background: #FF7629
+}
+.chartbr2{
+    background: #00629E
+}
+.chartbr3{
+    background: #F85974;
+}
+.chartbr4{
+    background: #02A099;
+}
+.titlelinechart {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 17.8037px;
+    line-height: 22px;
+    font-family: 'Inter Tight', sans-serif !important;
+}
+
+.Escrow {
+    font-weight: 400;
+    font-size: 17.8037px;
+    line-height: 22px;
+}
+
+.Escrownum {
+    font-weight: 700;
+    font-size: 21.8037px;
+    line-height: 26px;
+    letter-spacing: -0.872147px;
+}
+
+/* Health table */
+.jobDetailsss{
+    font-weight: 500;
+font-size: 18px;
+line-height: 22px;
+}
+.healthtableheader{
+    font-weight: 400;
+font-size: 14px!important;
+line-height: 18px!important;
+/* identical to box height, or 129% */
+
+letter-spacing: -0.08px;
+
+color: rgba(0, 0, 0, 0.8)!important;
+}
+.healthtablebody{
+    font-weight: 500;
+font-size: 14px;
+line-height: 18px !important; 
+/* identical to box height, or 129% */
+
+letter-spacing: -0.08px;
+
+color: #8895A4 !important;
+}
+.Ongoingbtnt{
+    background-color: transparent;
+    font-weight: 500;
+font-size: 14px;
+line-height: 18px;
+}

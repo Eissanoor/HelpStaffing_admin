@@ -1,0 +1,178 @@
+.css-19z1ozs-MuiPaper-root-MuiAppBar-root {
+    box-shadow: none !important;
+}
+
+.css-9gdtx-MuiListItemText-root {
+    font-family: 'Lato';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 22px;
+    line-height: 26px;
+
+    color: #FFFFFF !important;
+}
+
+.css-1191obr-MuiPaper-root-MuiAppBar-root {
+    box-shadow: none !important;
+}
+
+.css-hip9hq-MuiPaper-root-MuiAppBar-root {
+    background-color: none !important;
+    box-shadow: none !important;
+}
+
+.Navbar {
+    background: transparent !important;
+}
+
+.css-hip9hq-MuiPaper-root-MuiAppBar-root {
+    background: transparent !important;
+}
+
+.icon-sidebar {
+    cursor: pointer;
+}
+
+.headingall {
+    font-family: 'Lato';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 22px;
+    line-height: 26px;
+
+    color: #FFFFFF;
+
+}
+
+.breadcrums {
+    font-family: "Inter", sans-serif;
+}
+
+.mainbreadcrums {
+    font-family: 'Lato';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 22px;
+    line-height: 26px;
+
+    color: #FFFFFF;
+
+}
+
+.css-1l8j5k8 {
+    /* background: #00629E; */
+    background-color: #7a9857;
+    height: 100vh !important;
+    z-index: 110000;
+}
+
+.css-hip9hq-MuiPaper-root-MuiAppBar-root {
+    background-color: white !important;
+}
+
+.css-2dum1v-MuiDrawer-docked .MuiDrawer-paper {
+    background: #7a9857 !important;
+    height: 100vh !important;
+}
+
+.css-12i7wg6-MuiPaper-root-MuiDrawer-paper {
+    background: #7a9857 !important;
+}
+
+.arrowforwardicon {
+    /* position: absolute; */
+    /* left: 2%; */
+    /* background: #fbb040; */
+    color: #053b5c !important;
+    /* transform: matrix(-1, 0, 0, 1, 0, 0); */
+    font-size: 1.5em !important;
+    margin-left: 25px !important;
+    /* margin-right: 5px !important; */
+    z-index: 100;
+}
+
+.css-h4y409-MuiList-root {
+    padding-top: 0px !important;
+    padding-bottom: 0px !important;
+}
+
+.arrowbackicon {
+    color: #053b5c !important;
+    /* transform: matrix(-1, 0, 0, 1, 0, 0); */
+    font-size: 1.5em !important;
+    /* margin-left: 2.5% !important; */
+    margin-right: -40px !important;
+    margin-bottom: 10px;
+    /* margin-top: -100px !important; */
+    z-index: 100;
+}
+
+.backicon {
+    /* margin-left: 2px; */
+    position: absolute;
+    left: -44px;
+    top: 40px;
+}
+
+.righticon {
+    position: absolute;
+    left: 2.5px;
+    top: 8px;
+}
+
+::-webkit-scrollbar {
+    width: 1px !important;
+}
+
+.sidebaricon {
+    color: #00629E;
+    font-size: 1.4rem;
+    /* width: 80%; */
+}
+.jobsside{
+    width: 100%!important;
+}
+.Transactionsiconside{
+    width: 90%!important;
+}
+.appsettingsidebard{
+    width: 78% !important;
+}
+.Contractssidebardicon{
+    width: 74%!important;
+}
+.faqsidebaricon{
+    width: 74%!important;
+}
+.tossidebaricon{
+    width: 77%!important;
+}
+
+.sidebariconactive {
+    color: rgb(179, 179, 179);
+    font-size: 1.4rem;
+}
+
+.Customeelement {
+    color: #ffffff;
+    font-family: 'Lato';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 22px;
+    line-height: 26px;
+}
+
+.activeelement {
+    background: #000000;
+    opacity: 0.3;
+    font-family: 'Lato';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 22px;
+    line-height: 26px;
+    /* border-radius: 6px; */
+    /* margin: 0p; */
+}
+.Dashordimg{
+    width: 20px !important;
+}

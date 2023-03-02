@@ -1,0 +1,131 @@
+.jobbtn {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 23px;
+}
+
+/* input */
+#homeseract {
+    border: 1px solid #DEE3E9;
+    font-family: 'Lato';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 17px;
+    background: #FFFFFF;
+    color: #94A0B4;
+    width: 70vh;
+}
+
+#homeseract::placeholder {
+    font-family: 'Cera Pro';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 20px;
+    color: #94A0B4;
+    background: #FFFFFF;
+}
+
+#homeseract:focus:focus {
+    /* background: transparent; */
+    background: #FFFFFF;
+    outline: none;
+    border: 1px solid #94A0B4;
+}
+
+.filters {
+    background: #F7F9FC;
+    border: 1px solid #DEE3E9;
+    cursor: pointer;
+}
+
+.ByCategories {
+    font-family: 'Cera Pro';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 26px;
+    line-height: 33px;
+    color: #474647;
+}
+
+.ViewallCategories {
+    font-family: 'Cera Pro';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 25px;
+    color: #00629E;
+}
+
+.forenvelophead {
+    font-family: 'Cera Pro';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 25px;
+    text-align: center;
+
+    color: #474647;
+}
+
+.forcard-bg {
+    border-radius: 10px;
+    border: none;
+    background: #FFFFFF;
+    /* Orange Button */
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.DoctorsAvailable {
+    font-family: 'Cera Pro';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 25px;
+    color: #474647;
+}
+
+.DoctorsAvailable-bg {
+    background: rgba(0, 98, 158, 0.9);
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.15);
+    border-radius: 6px;
+}
+
+.MikeWilson {
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 25px;
+}
+
+.MBBS {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 23px;
+}
+
+.experience {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 10px;
+}
+
+.map {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 15px;
+    line-height: 16px;
+}
+
+.start {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 15px;
+    line-height: 15px;
+}

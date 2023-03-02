@@ -1,0 +1,55 @@
+.NewHospitalsheading{
+    font-weight: 500;
+font-size: 18px;
+line-height: 22px;
+}
+.HostpitalsJoining{
+    font-weight: 400;
+font-size: 14px;
+line-height: 18px;
+/* identical to box height, or 129% */
+
+letter-spacing: -0.08px;
+
+color: #8895A4;
+}
+.bgdashgraphcol1{
+    background: #222983;
+}
+.bgdashgraphcol2{
+    background: #3351F6;
+}
+.bgdashgraphcol3{
+    background: #FF7500;
+}
+.bgdashgraphcol4{
+    background: #0ACF97;
+}
+.bgdashgraphcol5{
+    background: #D7A4FF;
+}
+.bgdashgraphcol6{
+    background: #8856B0;
+}
+.ciclesgroph{
+    width: 7px;
+    height:7px;
+}
+.textdashcardhead{
+    font-weight: 500;
+font-size: 14px;
+line-height: 18px;
+/* identical to box height, or 129% */
+
+letter-spacing: -0.08px;
+
+color: #8895A4;
+}
+.numberdashcardhead{
+    font-weight: 500;
+font-size: 12px;
+line-height: 18px;
+/* identical to box height, or 150% */
+
+letter-spacing: -0.08px
+}

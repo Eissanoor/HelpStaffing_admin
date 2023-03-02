@@ -1,0 +1,39 @@
+.deletingheading {
+    font-family: 'Roboto', sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 22px;
+    line-height: 28px;
+    /* identical to box height */
+
+
+    /* Answer text */
+
+    color: #474647;
+}
+
+.nobtn {
+    font-family: 'Roboto', sans-serif !important;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 18px;
+    color: #FF7629 !important;
+    border: 1px solid #FF7629 !important;
+}
+
+.yesbtn {
+    background: #FF7629 !important;
+    font-family: 'Roboto', sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 20px;
+    color: white !important;
+    border: 1px solid #FF7629 !important;
+}
+
+.yesbtn:hover {
+    background: White !important;
+    color: #FF7629 !important;
+}

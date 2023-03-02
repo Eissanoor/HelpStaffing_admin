@@ -1,0 +1,132 @@
+.mainalljob {
+    box-shadow: 0px 4px 4px rgba(236, 234, 234, 0.25);
+
+}
+.alljobs{
+font-family: 'Roboto', sans-serif;
+font-style: normal;
+font-weight: 700;
+font-size: 18px;
+line-height: 23px;
+color: #00629E;
+}
+.authorname {
+    font-style: normal;
+    font-weight: 700;
+    font-size: 22px;
+    line-height: 28px;
+}
+
+.authordetail {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 20px;
+    color: #474647;
+
+}
+
+.contentprog {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 23px;
+}
+
+.firstsec {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 23px;
+}
+
+.fontfamily {
+   font-family: 'Roboto', sans-serif;
+}
+
+.alljobactionimag {
+    background: #F2F4F4;
+    
+}
+
+/* Job Details */
+.Contract {
+    font-family: 'Lato';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 22px;
+    color: #8895A4;
+}
+
+.Jobdetailsnumber {
+    font-family: 'Lato';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 26px;
+    line-height: 31px;
+}
+
+.forbreadcrumbtext {
+    font-family: 'Inter', sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 12px;
+    line-height: 15px;
+    color: #BAC3D2;
+}
+
+.forbreadcrumbactive {
+    font-family: 'Inter', sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 19px;
+}
+.Cardiologist{
+   font-family: 'Roboto', sans-serif;
+font-style: normal;
+font-weight: 500;
+font-size: 16px;
+line-height: 20px;
+background: #F1F2F8;
+}
+
+.Summary {
+   font-family: 'Roboto', sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 26px;
+    line-height: 33px;
+    color: #02A099;
+}
+
+.line {
+    border: 1px solid #94A0B4;
+}
+
+.Jobdetailsheading {
+    font-family: 'Lato';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 22px;
+    margin-left: 40px;
+    color: #8895A4;
+}
+
+.PostedBy {
+   font-family: 'Roboto', sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 23px;
+}
+.TestTaken{
+    font-family: 'Roboto', sans-serif;
+font-style: normal;
+font-weight: 500;
+font-size: 14px;
+line-height: 18px;
+color: #02A099;
+}

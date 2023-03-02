@@ -1,0 +1,107 @@
+.Personalitytext {
+    font-weight: 600;
+    font-size: 26px;
+    line-height: 31px;
+
+    /* Logo blue */
+
+    color: #00629E;
+}
+
+.AddQuestions {
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 23px;
+    color: #474647;
+
+}
+
+.Addbtnquestion {
+    background-color: #FF7629;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 18px;
+}
+
+.PersonalsFAQ {
+    font-weight: bold !important;
+    font-size: 20px !important;
+    line-height: 25px !important;
+}
+
+/* .dddd{
+    position: fixed;
+    left: 93%;
+} */
+.personalibtn {
+    background: #F2F4F4;
+}
+
+/*  */
+/*  */
+/*  */
+/*  */
+/*  */
+/* Add Personali section */
+.addpersonalpro {
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 22px;
+    color: #94A0B4;
+}
+
+.textareaforaddpersonal {
+    box-shadow: 0px 4px 4px rgb(0 0 0 / 25%);
+}
+
+.addoption {
+    border: 0.5px solid #F2F4F4;
+    background: rgba(242, 244, 244, 0.2);
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 24px;
+    color: #94A0B4;
+    box-shadow: 0px 4px 4px rgb(0 0 0 / 25%);
+}
+
+.addoption:focus {
+    border: 0.5px solid #F2F4F4;
+}
+
+.addoption:active {
+    border: 0.5px solid #F2F4F4;
+}
+
+.personialbtss {
+    border: 1px solid #00629E;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 24px;
+}
+.borderse1{
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+.borderse2{
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+.ant-switch{
+    border-radius: 3px!important;
+    height: 27px;
+    border: 3px solid #94A0B4!important;
+    /* background: transparent; */
+    /* width: 30px; */
+    min-width: 56px;
+}
+.ant-switch::before{
+    border: 3px solid red!important;
+}
+/* .ant-switch-handle{
+
+} */
+.correctanswer{
+    font-weight: 500;
+font-size: 20px;
+line-height: 25px;
+}

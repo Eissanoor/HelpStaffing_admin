@@ -1,0 +1,38 @@
+
+.inputcertification{
+    border: 1px solid #DEE3E9;
+}
+.inputcertification:focus{
+    outline: none !important;
+}
+.certificationpro{
+    font-weight: 500;
+font-size: 20px;
+line-height: 25px;
+
+}
+.Certificationhtableheader{
+    font-weight: 500 !important;
+font-size: 16px !important;
+line-height: 150% !important;
+color: #6E7F8C !important;
+}
+.cerificationtablebody{
+    font-weight: 500 !important;
+font-size: 16px !important;
+line-height: 150% !important;
+font-weight: bold !important;
+}
+#composition-button{
+    color: #02A099;
+    font-weight: 500;
+font-size: 16px;
+line-height: 150%;
+background: #F7F9FC;
+}
+.css-ee20y-MuiPaper-root{
+    background-color: transparent !important;
+}
+.css-1ex1afd-MuiTableCell-root{
+    border: none !important;
+}

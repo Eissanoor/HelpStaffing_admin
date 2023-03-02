@@ -1,0 +1,38 @@
+.Typeofjob{
+    z-index: 1 !important;
+}
+.fromjobdata{
+    z-index: -1 !important;
+}
+.fortimelabel {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 10px;
+    line-height: 12px;
+  }
+  .fortimepicker {
+    border: 1px solid #00629E;
+    color: #00629E;
+    font-size: 14px;
+    font-family: helvetica;
+    background-color: transparent;
+    border-radius: 4px;
+    /* width: 180px; */
+    padding: 5px 5px;
+  }
+  .fortimepicker:target {
+    outline: none;
+  }
+  .fortimepicker:focus-visible {
+    outline: none;
+  }
+.ProviderJob{
+    font-family: 'Inter';
+font-style: normal;
+font-weight: 500;
+font-size: 14px;
+line-height: 20px;
+color: #9EA0AA;
+z-index: 1!important;
+}

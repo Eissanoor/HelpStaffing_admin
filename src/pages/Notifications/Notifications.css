@@ -1,0 +1,65 @@
+.Notificationsheading{
+    font-style: normal;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 30px;
+}
+.Notificationspropg{
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 23px;
+    color: #474647;
+    
+}
+.Notificationsbtn{
+    font-style: normal;
+font-weight: 700;
+font-size: 18px;
+line-height: 23px;
+background: rgba(0, 98, 158, 0.2);
+}
+.todayheading{
+    font-style: normal;
+font-weight: 700;
+font-size: 24px;
+line-height: 30px;
+
+/* grey 50 */
+
+color: #94A0B4;
+}
+.cardmain{
+    box-shadow: 5px 5px 5px 5px #ebebeb;
+}
+.carprog{
+    font-style: normal;
+font-weight: 700;
+font-size: 20px;
+line-height: 25px;
+}
+.onehago{
+    font-style: normal;
+font-weight: 500;
+font-size: 16px;
+line-height: 20px;
+color: #94A0B4;
+}
+.carddetails{
+    font-style: normal;
+font-weight: 500;
+font-size: 18px;
+line-height: 23px;
+
+color: #474647;
+}
+.Reviewbtn{
+    font-style: normal;
+font-weight: 700;
+font-size: 20px;
+line-height: 25px;
+
+/* Answer text */
+
+color: #474647;
+}

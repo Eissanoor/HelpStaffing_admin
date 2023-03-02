@@ -1,0 +1,53 @@
+.addnewheading {
+    font-family: 'Roboto', sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 22px;
+    line-height: 28px;
+}
+
+.headinglabel {
+    font-family: 'Roboto', sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 23px;
+    color: #474647;
+}
+
+.start {
+    color: #9D0400;
+}
+
+.Create {
+    background: #00629E;
+    font-family: 'Roboto', sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 23px;
+}
+
+/* Filter */
+.Cancelbtn {
+    font-family: 'Roboto', sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    background-color: transparent;
+    line-height: 18px;
+    border: 1px solid #00629E;
+    color: #00629E;
+}
+.filterpopo{
+    padding: 3px 0px;
+}
+.showpassiconfilter{
+    left: 92%;
+}
+.css-sxq3c4-MuiSlider-root{
+    color: #1976d2!important;
+}
+.css-sxq3c4-MuiSlider-root .MuiSlider-valueLabel{
+    background-color: #1976d2!important;
+}

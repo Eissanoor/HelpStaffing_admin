@@ -1,0 +1,46 @@
+.appsettingeditingtitle{
+    font-weight: 500;
+font-size: 18px;
+line-height: 23px;
+color: #474647;
+}
+.Assistant{
+    background: #F7F9FC;
+border: 0.5px solid #94A0B4;
+font-weight: 400;
+font-size: 18px;
+line-height: 21px;
+font-style: italic;
+color: #474647;
+}
+.uploaded{
+    font-weight: 500;
+font-size: 18px;
+line-height: 23px;
+}
+/* Add Categories */
+.Addtocategories{
+    font-weight: 700!important;
+    background: #00629E;
+
+font-size: 16px!important;
+line-height: 120%!important;
+}
+.Addtosubcategories{
+    background: rgba(0, 98, 158, 0.2);
+    font-weight: 700;
+font-size: 16px;
+line-height: 120%;
+color: #00629E;
+}
+.selectlable{
+    font-weight: 500;
+font-size: 18px;
+line-height: 23px;
+color: #474647;
+}
+
+.Parentcategories{
+    border: 2px solid #00629E;
+    color: #00629E;
+}

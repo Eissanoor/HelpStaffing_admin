@@ -1,0 +1,80 @@
+.profileheading{
+    font-family: 'Lato';
+font-style: normal;
+font-weight: 400;
+font-size: 16px;
+line-height: 19px;
+
+color: #000000;
+}
+.css-hip9hq-MuiPaper-root-MuiAppBar-root {
+    background: #FFFFFF !important;
+    width: 102.3% !important;
+    box-shadow: none !important;
+    /* width: 100vw !important; */
+  }
+  .css-hip9hq-MuiPaper-root-MuiAppBar-root{
+    background: #FFFFFF!important;
+  }
+  .css-19z1ozs-MuiPaper-root-MuiAppBar-root {
+    box-shadow: none !important;
+  }
+  
+  .css-hip9hq-MuiPaper-root-MuiAppBar-root {
+    box-shadow: none !important;
+  }
+  
+  .css-1x7skt0 {
+    box-shadow: none !important;
+    background-color: #FFFFFF !important;
+  }
+  .css-bpnhhg .MuiDrawer-paper {
+    background: #FFFFFF !important;
+    box-shadow: none !important;
+  }
+  .css-1kf81xp-MuiPaper-root-MuiAppBar-root {
+    box-shadow: none !important;
+  }
+  
+  .cursor {
+    cursor: pointer;
+  }
+
+  .headingprog12{
+    font-weight: 600;
+font-size: 14px;
+line-height: 20px;
+color: #1A1F36;
+  }
+  .viewheader{
+    font-weight: 500;
+font-size: 14px;
+line-height: 20px;
+  }
+  .Ignoreheader{
+    color: #3C4257;
+    border: 1px solid #3C4257;
+  }
+  .headertimenotifa{
+    font-weight: 500;
+font-size: 14px;
+line-height: 20px;
+color: #A5ACB8;
+
+  }
+ .Notificationsmainhead{
+  font-weight: 600;
+font-size: 16px;
+line-height: 20px;
+ } 
+ .ant-select:not(.ant-select-customize-input) .ant-select-selector{
+  border: none !important;
+ }
+ .alldropdounmenu{
+  font-weight: 500;
+font-size: 12px;
+line-height: 20px;
+display: flex;
+align-items: center;
+color: #9EA0AA;
+ }

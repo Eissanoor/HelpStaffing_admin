@@ -1,0 +1,93 @@
+.foraddinput {
+    font-family: 'Cera Pro';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 23px;
+    color: #474647;
+}
+
+
+.progSelect {
+    font-style: italic;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 18px;
+}
+/* input */
+/* input[type="text"]{
+    border: 1px solid #DEE3E9;
+    width: 50%;
+    font-family: 'Lato';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 17px;
+    background: #FFFFFF;
+    color: #94A0B4;
+  }
+  input[type="text"]:focus{
+    background: #FFFFFF;
+    outline: none;
+    border: 1px solid #94A0B4;
+  }
+  input[type="text"]:placeholder{
+    font-family: 'Cera Pro';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 20px;
+    color: #94A0B4;
+    background: #FFFFFF;
+  } */
+/* Radio button */
+input[type="radio"]:checked {
+    background-color: #000000;
+    accent-color: #000000;
+  }
+  /* Data button */
+  input[type="date"]{
+    border: 1px solid #DEE3E9;
+    width: 50%;
+    font-family: 'Lato';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 17px;
+    background: #FFFFFF;
+    color: #94A0B4;
+  }
+  input[type="date"]:focus{
+    background: #FFFFFF;
+    outline: none;
+    border: 1px solid #94A0B4;
+  }
+  input[type="date"]:placeholder{
+    font-family: 'Cera Pro';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 20px;
+    color: #94A0B4;
+    background: #FFFFFF;
+  }
+
+  .myTextArea {   /* for all text* area elements */
+    resize: none;
+  }
+  .Save{
+font-style: normal;
+font-weight: 700;
+font-size: 18px;
+line-height: 23px;
+color: #00629E;
+border: 1px solid #00629E;
+background:transparent;
+  }
+  .Preview{
+    font-style: normal;
+font-weight: 700;
+font-size: 18px;
+line-height: 23px;
+
+  }

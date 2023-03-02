@@ -1,0 +1,95 @@
+.totaljob {
+    font-family: 'Lato';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 22px;
+    color: #8895A4;
+}
+
+.numberindashord {
+    font-family: 'Lato';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 26px;
+    line-height: 31px;
+
+}
+
+.rangin {
+    font-family: 'Lato';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 19px;
+
+    color: #0ACF97;
+}
+
+.ranginprog {
+    font-family: 'Lato';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 18px;
+    /* identical to box height, or 129% */
+
+    letter-spacing: -0.08px;
+
+    color: #8895A4;
+}
+
+.rangindown {
+    font-family: 'Lato';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 19px;
+
+    color: #FF0000;
+}
+
+/* Card section */
+.LocatinWashingtonmain{
+    line-height: 15px;
+}
+.Hiring {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 10px;
+}
+
+.LocatinWashington {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 10px
+}
+
+.ratedashbord {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 10px;
+}
+.Earnings{
+    font-weight: 600;
+font-size: 18px;
+line-height: 22px;
+color: #474647;
+}
+.sincelast{
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 18px;
+    /* identical to box height, or 129% */
+    
+    letter-spacing: -0.08px;
+    
+    color: #8895A4;
+}
+.ratescine{
+    color: #FF0000;
+    font-weight: 400;
+font-size: 16px;
+line-height: 19px;
+}

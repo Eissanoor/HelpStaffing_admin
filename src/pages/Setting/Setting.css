@@ -1,0 +1,72 @@
+.Settings{
+font-style: normal;
+font-weight: 700;
+font-size: 24px;
+line-height: 30px;
+}
+.editingprofile{
+    font-style: normal;
+font-weight: 700;
+font-size: 26px;
+line-height: 33px;
+color: #94A0B4;
+}
+.forsettinglabel{
+    font-style: normal!important;
+    font-family: 'Cera Pro'!important;
+font-weight: 500!important;
+font-size: 16px!important;
+line-height: 20px !important;
+color: #94A0B4!important;
+}
+.Foruploadimgsetting {
+    width: 100px !important;
+    height: 100px !important;
+  }
+  .forsettinginput {
+    background: #F7F9FC;
+    border: 0.5px solid #94a0b4;
+    border-radius: 10px;
+    font-family: 'Roboto', sans-serif !important;
+    /* color: black !important; */
+    color: #474647;
+    outline: none;
+    font-style: normal;
+font-weight: 500;
+font-size: 20px;
+line-height: 25px;
+  }
+  .forsettinginput::placeholder{
+    font-style: normal;
+    font-family: 'Cera Pro'!important;
+font-weight: 500;
+font-size: 20px;
+line-height: 25px;
+outline: none;
+color: #474647;
+  }
+  .forsettinginput:focus {
+    background: transparent;
+    font-family: 'Cera Pro'!important;
+    outline: none;
+    color: #474647;
+  }
+  .forsavesettingbtn{
+    background: #00629E;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 20px;
+    
+  }
+  .inpassinputicon{
+    left: 95%;
+  }
+  @media only screen and (max-width: 768px) {
+    .inpassinputicon{
+      left: 90%;
+    }
+  }
+  .image-upload>input {
+    display: none;
+  }
