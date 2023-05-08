@@ -57,31 +57,33 @@ function Addjob() {
   };
   const usereditid = () => {
     // const fromdata = new URLSearchParams();
-    // const fromdata = new FormData();
-    // fromdata.append("hospital_Faculty", hospital_Faculty);
-    // // fromdata.append("lastName", lastName);
-    // fromdata.append("speciality", speciality);
-    // fromdata.append("jod_duration", jod_duration);
-    // fromdata.append("from", from);
-    // fromdata.append("Description", Description)
-    // fromdata.append("to", to);
-    // fromdata.append("hourlyRate", hourlyRate);
-    // fromdata.append("shift", shift);
-    // fromdata.append("profile", profile);
-     const datafrom = {
-       hospital_Faculty: hospital_Faculty,
-       jod_duration: jod_duration,
-       speciality: speciality,
-       from: from,
-       to: to,
-       Description: Description,
-       hourlyRate: hourlyRate,
-       shift: shift,
-       profile: profile,
-       //  status: true
-     };
-    console.log(datafrom);
-    axios.post(`https://gold-courageous-cocoon.cyclic.app/addjobs`, datafrom
+    const fromdata = new FormData();
+    fromdata.append("hospital_Faculty", hospital_Faculty);
+    // fromdata.append("lastName", lastName);
+    fromdata.append("speciality", speciality);
+    fromdata.append("jod_duration", jod_duration);
+    fromdata.append("from", from);
+    fromdata.append("Description", Description)
+    fromdata.append("to", to);
+    fromdata.append("hourlyRate", hourlyRate);
+    fromdata.append("shift", shift);
+    fromdata.append("profile", profile);
+    
+    //  const datafrom = {
+    //    hospital_Faculty: hospital_Faculty,
+    //    jod_duration: jod_duration,
+    //    speciality: speciality,
+    //    from: from,
+    //    to: to,
+    //    Description: Description,
+    //    hourlyRate: hourlyRate,
+    //    shift: shift,
+    //    profile: profile,
+    //    //  status: true
+    //  };
+   
+    console.log(fromdata);
+    axios.post(`https://gold-courageous-cocoon.cyclic.app/addjobs`, fromdata
       
     )
       .then((res) => {
