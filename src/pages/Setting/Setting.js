@@ -228,8 +228,8 @@ function Setting() {
                                 //   src={cameraicon}
                                 //   />
                                 <div className="image-upload">
-                                  <Avatar size={64} icon={<UserOutlined />} />
-                               <img src={uploaded} className="ms-0 my-4" width="100px"></img>
+                                  {/* <Avatar size={64} /> */}
+                               {/* <img src={uploaded} className="ms-0 my-4" width="100px"></img> */}
                                   <label htmlFor="file-input">
                                     <img src={cameraicon} />
                                   </label>

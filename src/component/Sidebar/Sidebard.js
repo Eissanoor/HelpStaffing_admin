@@ -13,8 +13,7 @@ import Divider from "@mui/material/Divider";
 import IconButton from "@mui/material/IconButton";
 import { BsFillArrowRightCircleFill } from "react-icons/bs";
 import { BsFillArrowLeftCircleFill } from "react-icons/bs";
-import { MdOutlineLeaderboard } from "react-icons/md";
-import { MdOutlineShoppingCart } from "react-icons/md";
+import {MenuOutlined ,CloseSquareFilled ,CloseOutlined } from '@ant-design/icons';
 import ListItem from "@mui/material/ListItem";
 import ListItemButton from "@mui/material/ListItemButton";
 import ListItemIcon from "@mui/material/ListItemIcon";
@@ -146,7 +145,7 @@ function Sidebard(stat) {
             }}
             className="arrowforwardicon"
           >
-            <BsFillArrowRightCircleFill className="righticon" />
+            < MenuOutlined className = "righticon" / >
           </IconButton>
           <IconButton
             color="inherit"
@@ -159,7 +158,7 @@ function Sidebard(stat) {
             }}
             className="arrowbackicon"
           >
-            <BsFillArrowLeftCircleFill className="backicon" />
+            < CloseOutlined className = "backicon" / >
           </IconButton>
 
           <Header />
@@ -169,16 +168,16 @@ function Sidebard(stat) {
       <Drawer variant="permanent" open={open}>
         <div className="">
           {theme.direction === "rtl" ? (
-            <BsFillArrowLeftCircleFill />
+            < MenuOutlined / >
           ) : (
-            <div className="d-none">{<BsFillArrowRightCircleFill />}</div>
+            <div className="d-none">{<MenuOutlined />}</div>
           )}
         </div>
 
         <Divider />
         <div className="mx-2">
           {show ? (
-            <span className="p-2">
+            <span className="p-2 text-white">
               <center>
                 <img className="w-75 mt-1" src={logo} alt="" />
               </center>

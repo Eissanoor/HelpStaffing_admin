@@ -72,7 +72,8 @@ function Logoutpop() {
 
   function loginbutton(e) {
     e.preventDefault();
-    apicall();
+    // apicall();
+    navigate("/")
     console.log("Error is ");
 
   }
