@@ -30,7 +30,18 @@ import { UserOutlined } from '@ant-design/icons';
 import { Avatar } from 'antd';
 function TableHealth() {
   const [Loading, setLoading] = useState(true);
-  
+    const [page, setPage] = React.useState(0);
+    const [rowsPerPage, setRowsPerPage] = React.useState(10);
+
+    const handleChangePage = (event, newPage) => {
+      setPage(newPage);
+    };
+
+    const handleChangeRowsPerPage = (event) => {
+      setRowsPerPage(+event.target.value);
+      setPage(0);
+    };
+
   const defaultOptions = {
     loop: true,
     autoplay: true,
@@ -43,19 +54,20 @@ function TableHealth() {
   const [dataget, setdataget] = useState();
  const [pageCount, setPageCount] = useState(0);
  const [currentPage, setCurrentPage] = useState(0);
+ const [length, setlength] = useState("");
+ const [rowss, setRows] = React.useState([])
   const apicall = () => {
-    axios
-      .get(`https://gold-courageous-cocoon.cyclic.app/allProvider`,
+    axios.get(`https://gold-courageous-cocoon.cyclic.app/admin/allProvider`,
        {
-        // headers: {
-        //   secretKey:
-        //     "rosx.AD-98dBXZnC7rb794a5593PjPQfzDsQgwy.BXF1LNPw4lZLK6BR6Kidf90.@$%hummstaffing???AD",
-        //   Authorization: `Bearer ${localStorage.getItem("access_key")}`,
-        // },
+          headers: {
+            autherization: `Bearer ${localStorage.getItem("Tokensss")}`,
+          },
       })
       .then((res) => {
         setdataget(res.data);
         console.log(res.data);
+        setRows(res.data);
+        setlength(res.data.length);
         // setPageCount(Math.ceil(res.data.docs.length / 10));
         setLoading(false);
       })
@@ -90,14 +102,13 @@ let N=0;
                 {/* forfilterbtn  */}
                 <h6 className="Provider my-auto">All Provider</h6>
                 <div className="d-flex my-auto">
-                  {/* <button className='my-auto border-0  text-white rounded mx-2 filterbtn py-1' ><img src={filter} className='' width='25px'/>Filter</button> */}
-                  {/* <button className='py-1 px-2 border-0 filterbtn text-white rounded mx-2' ><img src={filter} className='me-1 py-1' width='20px'/>Filter</button> */}
-                  <Filters />
+                 <Filters />
                   <AddNewbtn />
                 </div>
               </div>
 
               <Paper className="overflow-auto h-100 w-100">
+                 <TableContainer sx={{ maxHeight: 500, height: '450px' } }>
                 <Table className="tablebg " id="data">
                   {/* Header section */}
                   <TableHead>
@@ -111,30 +122,19 @@ let N=0;
                       <TableCell className="tablehad">Phone number</TableCell>
 
                       <TableCell className="tablehad">Expertise</TableCell>
-                      <TableCell className="tablehad">Test Taken</TableCell>
                       <TableCell className="tablehad">Action</TableCell>
                     </TableRow>
                   </TableHead>
                   <TableBody className="fortableposition">
                     {
-                      dataget.map((itme, index) => {
+                      dataget.slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage).map((itme, index) => {
                         return (
                           <TableRow className="">
                             <TableCell numeric className="fortbbody">
-                              {/* {itme._id} */}
-                              {N+=1}
+                              {itme.Id}
+                              {/* {N+=1} */}
                             </TableCell>
                             <TableCell className = "fortbbody rounded-circle" >
-                              {/* <img
-                                src = {
-                                    itme.profileImage
-}
-                                className = "me-2 rounded-circle"
-                                alt=""
-                                width='50px'
-                                height='50px'
-                                srcset=""
-                              /> */}
                                <Avatar   src = {itme.profileImage} className="me-2"  />
                              {
                                itme.fullname
@@ -152,12 +152,6 @@ let N=0;
 
                             <TableCell className="fortbbody">
                                 {itme.category}
-                            </TableCell>
-                            <TableCell className="fortbbody ">
-                              <Progress
-                                percent={30}
-                                className="progresswidth w-100"
-                              />
                             </TableCell>
 
                             <TableCell className="fortbbody ">
@@ -181,30 +175,24 @@ let N=0;
                       })}
                   </TableBody>
                 </Table>
+                </TableContainer>
               </Paper>
             </div>
           </div>
-          <div className="d-flex mt-3">
+          <div  className = "d-flex mt-3 justify-content-between" >
             <p className="entriess my-auto px-3">
-              Showing&nbsp;10&nbsp;-&nbsp;{dataget.length}&nbsp;enteries
+              Showing&nbsp; `{rowsPerPage}` &nbsp;-&nbsp;{dataget.length}&nbsp;enteries
             </p>
-            <div className="ms-auto px-3">
-              <ReactPaginate
-               previousLabel={"Previous"}
-                nextLabel={" Next"}
-                // pageCount={pageCount}
-                // pageRange={5}
-                 pageCount={pageCount}
-                  pageRangeDisplayed={5}
-                onPageChange={handlePageClick}
-                marginPagesDisplayed={2}
-                containerClassName={"paginationBttns"}
-                previousLinkClassName={"previousBttn"}
-                nextLinkClassName={"nextBttn"}
-                disabledClassName={"paginationDisabled"}
-                 activeClassName={'active'}
-              />
-            </div>
+            
+            <TablePagination
+                                  rowsPerPageOptions={[10, 25, 100]}
+                                  component="div"
+                                  count={length}
+                                  rowsPerPage={rowsPerPage}
+                                  page={page}
+                                  onPageChange={handleChangePage}
+                                  onRowsPerPageChange={handleChangeRowsPerPage}
+                              />
           </div>
         </div>
       )}

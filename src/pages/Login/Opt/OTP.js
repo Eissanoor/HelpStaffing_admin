@@ -16,51 +16,36 @@ function OTP() {
   // Main fuction of the compount
   const apicall = () => {
     console.log(email, code.join(""));
+    const otpCode = code.join('')
     console.log(code)
     axios.post(
         // `https://gold-courageous-cocoon.cyclic.app/emailVrifyOtp/${localStorage.getItem("email")}/${otp.join("")}`,
-        `https://gold-courageous-cocoon.cyclic.app/emailVrifyOtp`,
-   
+        `https://gold-courageous-cocoon.cyclic.app/admin/varifyPasswordOtp`, {
+          code: otpCode
+        },
         {
-          // headers: {
-          //   secretKey:
-          //     "rosx.AD-98dBXZnC7rb794a5593PjPQfzDsQgwy.BXF1LNPw4lZLK6BR6Kidf90.@$%hummstaffing???AD",
-          // },
+          headers: {
+              autherization: `Bearer ${localStorage.getItem("Tokensss")}`
+          },
         }
       )
       .then((res) => {
         // console.log(resutl)
         sessionStorage.setItem("access_key",res.headers.bearer)
         console.log(res);
-        console.log(res.data);
         setLoading(false);
         if (res.status === 201) {
           // navigate("/");
           navigate("/Changepassword");
         } else {
-          // setError("Weak Password!");
           throw new Error(
             `This is an HTTP error : The status is ${res.status}`
           );
-          //   // toast(`This is an HTTP error: The status is ${res.status}`);
-          
         }
       })
       .catch((err) => {
         console.log(err);
         setLoading(false);
-        // toast.error('🦄 Wow so easy!', {
-        //   position: "top-right",
-        //   autoClose: 5000,
-        //   hideProgressBar: false,
-        //   closeOnClick: true,
-        //   pauseOnHover: true,
-        //   draggable: true,
-        //   progress: undefined,
-        //   theme: "light",
-        //   });
-        // setError("Weak Password!");
-        // setUsenameerro("The UserName allready exit")
       });
   };
 

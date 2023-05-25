@@ -36,7 +36,7 @@ function Singup() {
   const apicall = () => {
     console.log(fullname, email, password);
     axios.post(
-        "https://gold-courageous-cocoon.cyclic.app/signUp",
+        "https://gold-courageous-cocoon.cyclic.app/admin/signUp",
         {
           fullname: fullname,
           email: email,
@@ -50,8 +50,9 @@ function Singup() {
         }
       )
       .then((res) => {
-        // console.log(resutl)
-        console.log(res);
+        console.log(res.data);
+        localStorage.setItem("access_keys", res.data.tokens)
+        console.log(localStorage.getItem("access_keys"));
         console.log(res.data);
         setLoading(false);
         if (res.status === 201) {
@@ -62,8 +63,6 @@ function Singup() {
           throw new Error(
             `This is an HTTP error : The status is ${res.status}`
           );
-          //   // toast(`This is an HTTP error: The status is ${res.status}`);
-          
         }
       })
       .catch((err) => {
@@ -71,6 +70,7 @@ function Singup() {
         setLoading(false);
         setError("Weak Password!");
         setUsenameerro("The UserName allready exit")
+       
       });
   };
 
@@ -78,7 +78,6 @@ function Singup() {
     e.preventDefault();
     setLoading(true);
     apicall();
-    console.log("error");
   }
 
   const [passwordShown, setPasswordShown] = useState(false);

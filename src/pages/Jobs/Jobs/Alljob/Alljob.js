@@ -39,22 +39,21 @@ function Alljob() {
   };
   const apicall = () => {
     axios.get(
-        `https://gold-courageous-cocoon.cyclic.app/alljob`,
-        // {
-        //   headers: {
-        //     secretKey:
-        //       "rosx.AD-98dBXZnC7rb794a5593PjPQfzDsQgwy.BXF1LNPw4lZLK6BR6Kidf90.@$%hummstaffing???AD",
-        //     Authorization: `Bearer ${localStorage.getItem("access_key")}`,
-        //   },
-        // }
+        `https://gold-courageous-cocoon.cyclic.app/admin/alljob`,
+        {
+          headers: {
+            autherization: `Bearer ${localStorage.getItem("Tokensss")}`
+          }
+        }
       )
       .then((res) => {
         setdataget(res.data);
-        // console.log(res.data.docs);
+        console.log(localStorage.getItem("Tokensss"));
         setLoading(false);
       })
       .catch((err) => {
         console.log(err);
+         console.log(localStorage.getItem("Tokensss"));
         //    setLoading(false);
       });
   };

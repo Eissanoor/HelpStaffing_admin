@@ -130,3 +130,17 @@ font-size: 14px;
 line-height: 18px;
 color: #02A099;
 }
+.css-1u3bzj6-MuiFormControl-root-MuiTextField-root {
+width: 100% !important;
+}
+.css-o9k5xi-MuiInputBase-root-MuiOutlinedInput-root{
+        background: #F7F9FC;
+        border: 0.5px solid #94a0b4;
+        border-radius: 10px;
+        /* outline: none; */
+        border-radius: 12px;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 20px;
+        /* line-height: 25px; */
+}

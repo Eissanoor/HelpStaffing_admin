@@ -57,18 +57,16 @@ function Changepassword() {
     console.log(password);
     console.log(sessionStorage.getItem("access_key"))
     axios.post(
-        `https://gold-courageous-cocoon.cyclic.app/changePassword`,
+        `https://gold-courageous-cocoon.cyclic.app/admin/changePassword`,
         {
           password:password
         }
         ,
-        // {
-        //   headers: {
-        //     secretKey:
-        //       "rosx.AD-98dBXZnC7rb794a5593PjPQfzDsQgwy.BXF1LNPw4lZLK6BR6Kidf90.@$%hummstaffing???AD",
-        //       Authorization:`Bearer ${sessionStorage.getItem("access_key")}`,
-        //   },
-        // }
+         {
+           headers: {
+             autherization: `Bearer ${localStorage.getItem("Tokensss")}`
+           },
+         }
       )
       .then((res) => {
         console.log(res);

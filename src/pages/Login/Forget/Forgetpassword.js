@@ -21,7 +21,8 @@ function Forgetpassword() {
   const apicall = () => {
     console.log(email);
     axios.post(
-      `https://gold-courageous-cocoon.cyclic.app/passwordchangeotpSend`,
+      `https://gold-courageous-cocoon.cyclic.app/admin/passwordchangeotpSend`,
+      
       {
 email:email
       },
@@ -43,14 +44,6 @@ email:email
           localStorage.setItem("email", email)
           // navigate("/");
           navigate("/OTP");
-        } else {
-          // setError("Weak Password!");
-          
-          throw new Error(
-            `This is an HTTP error : The status is ${res.status}`
-          );
-            toast(`This is an HTTP error: The status is ${res.status}`);
-
         }
       })
       .catch((err) => {
@@ -73,7 +66,6 @@ email:email
     e.preventDefault();
     setLoading(true);
     apicall();
-    console.log("Error is ");
   }
 
   const navigate = useNavigate();

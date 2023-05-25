@@ -61,3 +61,16 @@ font-size: 14px;
 line-height: 18px;
 color: #9D0400;
 }
+.registerbtn {
+    font-size: 18px;
+    font-style: normal;
+    color: #6b6a69;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
+}
+
+.Registersingup {
+    color: #b93732;
+    font-weight: bold;
+    font-style: italic;
+    cursor: pointer;
+}

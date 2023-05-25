@@ -30,7 +30,17 @@ import { ToastContainer, toast } from "react-toastify";
 
 function AllTable() {
   const [Loading, setLoading] = useState(true);
+const [page, setPage] = React.useState(0);
+const [rowsPerPage, setRowsPerPage] = React.useState(10);
 
+const handleChangePage = (event, newPage) => {
+  setPage(newPage);
+};
+
+const handleChangeRowsPerPage = (event) => {
+  setRowsPerPage(+event.target.value);
+  setPage(0);
+};
   const defaultOptions = {
     loop: true,
     autoplay: true,
@@ -41,19 +51,21 @@ function AllTable() {
   };
   // Main API fuction of the compount
   const [dataget, setdataget] = useState();
-
+const [length, setlength] = useState("");
+const [currentPage, setCurrentPage] = useState(0);
+const [rowss, setRows] = React.useState([])
   const apicall = () => {
     axios
-      .get("/admin/hospital?page=1&limit=10", {
+      .get("https://gold-courageous-cocoon.cyclic.app/admin/allHospital", {
         headers: {
-          secretKey:
-            "rosx.AD-98dBXZnC7rb794a5593PjPQfzDsQgwy.BXF1LNPw4lZLK6BR6Kidf90.@$%hummstaffing???AD",
-          Authorization: `Bearer ${localStorage.getItem("access_key")}`,
+          autherization: `Bearer ${localStorage.getItem("Tokensss")}`,
         },
       })
       .then((res) => {
-        setdataget(res.data.docs);
-        console.log(res.data.docs);
+        setdataget(res.data);
+        console.log(res.data);
+         setRows(res.data);
+         setlength(res.data.length);
         setLoading(false);
       })
       .catch((err) => {
@@ -86,6 +98,7 @@ function AllTable() {
                 </div>
               </div>
               <Paper className="w-100 h-100 overflow-auto">
+                 <TableContainer sx={{ maxHeight: 500, height: '450px' } }>
                 <Table className="tablebg " id="data">
                   {/* Header section */}
                   <TableHead>
@@ -97,16 +110,14 @@ function AllTable() {
                       <TableCell className="tablehad">Provider Name</TableCell>
                       <TableCell className="tablehad">Email</TableCell>
                       <TableCell className="tablehad">Type</TableCell>
-
                       <TableCell className="tablehad">Fields</TableCell>
-                      <TableCell className="tablehad">Test Taken</TableCell>
                       <TableCell className="tablehad">Action</TableCell>
                     </TableRow>
                   </TableHead>
 
                   <TableBody className="fortableposition">
                     {dataget &&
-                      dataget.map((itme, index) => {
+                      dataget.slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage).map((itme, index) => {
                         return (
                           <TableRow className="">
                             <TableCell numeric className="fortbbody">
@@ -121,7 +132,7 @@ function AllTable() {
                                 alt=""
                                 srcset=""
                               />
-                              {itme.hospitalName}
+                              {itme.name}
                             </TableCell>
 
                             <TableCell className="fortbbody">
@@ -133,9 +144,6 @@ function AllTable() {
 
                             <TableCell className="fortbbody">
                               {itme.fields}
-                            </TableCell>
-                            <TableCell className="fortbbody">
-                              <Progress percent={95} />
                             </TableCell>
                             <TableCell numeric className="fortbbody ">
                               <div className="actionimag d-flex justify-content-around py-2 rounded w-100">
@@ -158,29 +166,25 @@ function AllTable() {
                       })}
                   </TableBody>
                 </Table>
+                </TableContainer>
               </Paper>
             </div>
           </div>
 
-          <div className="d-flex p-2 mt-3">
-            <p className="entriess my-auto ms-3 mt-0">
-              Showing&nbsp;30&nbsp;-&nbsp;{dataget.length}&nbsp;enteries
+          <div  className = "d-flex mt-3 justify-content-between" >
+            <p className="entriess my-auto px-3">
+              Total&nbsp;-&nbsp;{dataget.length}&nbsp;enteries
             </p>
-            <div className="ms-auto  me-1">
-              <ReactPaginate
-                previousLabel={"Next"}
-                nextLabel={"Previous"}
-                // pageCount={pageCount}
-                pageRange={5}
-                marginPagesDisplayed={2}
-                // onPageChange={handlePageChange}
-                containerClassName={"paginationBttns"}
-                previousLinkClassName={"previousBttn"}
-                nextLinkClassName={"nextBttn"}
-                disabledClassName={"paginationDisabled"}
-                activeClassName={"paginationActive"}
-              />
-            </div>
+            
+            <TablePagination
+                                  rowsPerPageOptions={[10, 25, 100]}
+                                  component="div"
+                                  count={length}
+                                  rowsPerPage={rowsPerPage}
+                                  page={page}
+                                  onPageChange={handleChangePage}
+                                  onRowsPerPageChange={handleChangeRowsPerPage}
+                              />
           </div>
         </div>
       )}

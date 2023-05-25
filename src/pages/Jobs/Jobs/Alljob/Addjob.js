@@ -16,12 +16,16 @@ import eyeslash from "../../../../Assets/image/Eyepass.png";
 import { AiFillEye, AiFillEyeInvisible } from "react-icons/ai";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import Skeleton from "react-loading-skeleton";
 import "react-loading-skeleton/dist/skeleton.css";
+import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
+import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
+import { DatePicker } from "@mui/x-date-pickers/DatePicker";
+import { useMediaQuery, IconButton } from "@material-ui/core";
 import {
+  SearchOutlined,
+  CalendarOutlined,
   UserOutlined,
-  EyeOutlined,
-  EyeInvisibleOutlined,
+  LeftOutlined,
 } from "@ant-design/icons";
 import axios from "axios";
 import "../../../Setting/Setting.css";
@@ -30,8 +34,7 @@ import { Upload } from "antd";
 const drawerWidth = 220;
 
 function Addjob() {
-
-      const [show, setshow] = useState(false);
+  const [show, setshow] = useState(false);
   const [show1, setshow1] = useState(false);
   const [show2, setshow2] = useState(false);
   const [Loading, setLoading] = useState(true);
@@ -41,12 +44,14 @@ function Addjob() {
   const [speciality, setspeciality] = useState();
   const [jod_duration, setjod_duration] = useState();
   const [from, setfrom] = useState();
-  const [Description, setDescription] = useState()
+  const [Description, setDescription] = useState();
   const [to, setto] = useState();
   const [hourlyRate, sethourlyRate] = useState("");
   const [shift, setshift] = useState();
   const [positionTitle, setpositionTitle] = useState();
   const [profile, setprofile] = useState("");
+  const [startDate, setstartDate] = useState();
+  const [endDate, setendDate] = useState();
   const defaultOptions = {
     loop: true,
     autoplay: true,
@@ -58,42 +63,38 @@ function Addjob() {
   const usereditid = () => {
     // const fromdata = new URLSearchParams();
     const fromdata = new FormData();
+     fromdata.append("PositionTitle", positionTitle);
     fromdata.append("hospital_Faculty", hospital_Faculty);
-    // fromdata.append("lastName", lastName);
     fromdata.append("speciality", speciality);
     fromdata.append("jod_duration", jod_duration);
-    fromdata.append("from", from);
-    fromdata.append("Description", Description)
-    fromdata.append("to", to);
-    fromdata.append("hourlyRate", hourlyRate);
+    // fromdata.append("from", from);
+    fromdata.append("Description", Description);
+    // fromdata.append("to", to);
     fromdata.append("shift", shift);
     fromdata.append("profile", profile);
-    
-    //  const datafrom = {
-    //    hospital_Faculty: hospital_Faculty,
-    //    jod_duration: jod_duration,
-    //    speciality: speciality,
-    //    from: from,
-    //    to: to,
-    //    Description: Description,
-    //    hourlyRate: hourlyRate,
-    //    shift: shift,
-    //    profile: profile,
-    //    //  status: true
-    //  };
-   
+    fromdata.append("hourlyRate", hourlyRate);
+    fromdata.append("startDate", startDate);
+    fromdata.append("endDate", endDate);
+
     console.log(fromdata);
-    axios.post(`https://gold-courageous-cocoon.cyclic.app/addjobs`, fromdata
-      
+    axios.post(
+      `https://gold-courageous-cocoon.cyclic.app/admin/addjobs`,
+      fromdata,
+      {
+        headers: {
+          autherization: `Bearer ${localStorage.getItem("Tokensss")}`,
+        },
+      }
     )
       .then((res) => {
+        console.log(localStorage.getItem("Tokensss"));
         console.log(res.data);
         sethospital_Faculty("");
         setlastName("");
         setspeciality("");
         setjod_duration("");
         setfrom("");
-        setDescription("")
+        setDescription("");
         setto("");
         sethourlyRate("");
         setshift("");
@@ -111,7 +112,6 @@ function Addjob() {
       })
       .catch((err) => {
         console.log(err);
-        console.log("5");
         toast.error(`You hava not to Add job Successfully ${err.data}`, {
           position: "bottom-center",
           autoClose: 5000,
@@ -128,21 +128,17 @@ function Addjob() {
   function loginbutton(e) {
     e.preventDefault();
     usereditid();
-    console.log("6");
+    console.log(localStorage.getItem("Tokensss"));
   }
-
-  const SmallAvatar = styled(Avatar)(({ theme }) => ({
-    width: 52,
-    height: 52,
-    // border: `2px solid ${theme.palette.background.paper}`,
-  }));
 
   function handleChange(e) {
     // console.log(e.target.files);
     setuploaded(URL.createObjectURL(e.target.files[0]));
-    setprofile(e.target.value);
+    setprofile(e.target.files[0]);
     console.log(e.target.files[0]);
   }
+  const isSmallScreen = useMediaQuery("(max-width: 600px)");
+
   return (
     <>
       <div className="bg">
@@ -176,8 +172,8 @@ function Addjob() {
                     <div className="d-flex flex-column justify-content-center">
                       <div className="d-flex justify-content-center">
                         <form onSubmit={loginbutton}>
-                       {/* <center> */}
-                           <Stack
+                          {/* <center> */}
+                          <Stack
                             direction="row"
                             spacing={2}
                             className="d-flex justify-content-center"
@@ -189,14 +185,7 @@ function Addjob() {
                                 horizontal: "right",
                               }}
                               badgeContent={
-                                // <SmallAvatar
-                                //   className="cursor"
-                                //   alt="Remy Sharp"
-                                //   src={cameraicon}
-                                //   />
                                 <div className="image-upload">
-                                  {/* <Avatar size={64} icon={<UserOutlined />} />
-                               <img src={uploaded} className="ms-0 my-4" width="100px"></img> */}
                                   <label htmlFor="file-input">
                                     <img src={cameraicon} />
                                   </label>
@@ -218,28 +207,28 @@ function Addjob() {
                           </Stack>
                           {/* </center> */}
                           <div className="row w-75 mx-auto mt-4">
-                            { /* hospital_Faculty */ }
+                            {/* hospital_Faculty */}
                             <div className="col-lg-12 col-md-12 mt-3 d-grid">
                               <label
-                                htmlFor = "hospital_Faculty"
+                                htmlFor="hospital_Faculty"
                                 className="forsettinglabel fontfamilyRaleway"
                               >
-                               Hospital Name
+                                Hospital Name
                               </label>
                               <input
                                 type="text"
                                 className="forsettinginput fontfamilyRaleway mt-2 py-2 ps-3"
-                                id = "hospital_Faculty"
+                                id="hospital_Faculty"
                                 value={hospital_Faculty}
                                 onChange={(e) => {
                                   sethospital_Faculty(e.target.value);
                                 }}
-                                placeholder = "hospital Faculty"
+                                placeholder="hospital Faculty"
                                 autoComplete="off"
                                 required
                               />
                             </div>
-                          {/* positionTitle */}
+                            {/* positionTitle */}
                             <div className="col-12 mt-3  d-grid">
                               <label
                                 htmlFor="positionTitle"
@@ -251,7 +240,7 @@ function Addjob() {
                                 type="text"
                                 className="forsettinginput mt-2 py-2 ps-3"
                                 id="positionTitle"
-                                placeholder = "Position Title"
+                                placeholder="Position Title"
                                 autoComplete="off"
                                 required
                                 value={positionTitle}
@@ -263,7 +252,7 @@ function Addjob() {
                             {/* Speciality */}
                             <div className="col-12 mt-3  d-grid">
                               <label
-                                htmlFor = "speciality"
+                                htmlFor="speciality"
                                 className="forsettinglabel"
                               >
                                 Speciality
@@ -271,13 +260,11 @@ function Addjob() {
                               <input
                                 type="text"
                                 className="forsettinginput mt-2 py-2 ps-3"
-                                id = "speciality"
-                                placeholder = "Speciality"
+                                id="speciality"
+                                placeholder="Speciality"
                                 autoComplete="off"
                                 required
-                                value = {
-                                  speciality
-                                }
+                                value={speciality}
                                 onChange={(e) => {
                                   setspeciality(e.target.value);
                                 }}
@@ -295,7 +282,7 @@ function Addjob() {
                                 type="text"
                                 className="forsettinginput mt-2 py-2 ps-3"
                                 id="jod_duration"
-                                placeholder = "Jod Duration"
+                                placeholder="Jod Duration"
                                 autoComplete="off"
                                 required
                                 value={jod_duration}
@@ -304,9 +291,50 @@ function Addjob() {
                                 }}
                               />
                             </div>
+
+                            <div className="col-sm-12 col-md-6 col-lg-6 col-xl-6 d-grid mt-3" >
+                              <label
+                                htmlFor="startdate"
+                                className="forsettinglabel"
+                              >
+                                Start Date
+                              </label>{" "}
+                              <input
+                                type="date"
+                                // className=" w-100 py-3 datainput inputsection rounded px-2"
+                                className="forsettinginput mt-2 py-3 ps-3 w-100"
+                                id="startdate"
+                                placeholder="Enter your National President"
+                                onChange={(event) => {
+                                  setstartDate(event.target.value);
+                                }}
+                              />
+                            </div>
+                            <div className="col-sm-12 col-md-6 col-lg-6 col-xl-6 d-grid mt-3" >
+                              <label
+                                htmlFor="endDate"
+                                className="forsettinglabel"
+                              >
+                                End Date
+                              </label>{" "}
+                              <input
+                                type="date"
+                                // className=" w-100 py-3 datainput inputsection rounded px-2"
+                                className="forsettinginput mt-2 py-3 ps-3 w-100"
+                                id="endDate"
+                                placeholder="Enter your National President"
+                                onChange={(event) => {
+                                  setendDate(event.target.value);
+                                }}
+                              />
+                            </div>
+
                             {/* timefrom */}
-                            <div className="col-lg-6 col-md-12  mt-3  d-grid">
-                              <label htmlFor="timefrom" className="forsettinglabel">
+                            {/* <div className="col-lg-6 col-md-12  mt-3  d-grid">
+                              <label
+                                htmlFor="timefrom"
+                                className="forsettinglabel"
+                              >
                                 From
                               </label>
                               <input
@@ -316,47 +344,46 @@ function Addjob() {
                                 placeholder="timefrom"
                                 autoComplete="off"
                                 required
-                                value = {
-                                  from
-                                }
+                                value={from}
                                 onChange={(e) => {
                                   setfrom(e.target.value);
                                 }}
                               />
-                            </div>
+                            </div> */}
                             {/* timeto */}
-                            <div className="col-lg-6 col-md-12  mt-3  d-grid">
+                            {/* <div className="col-lg-6 col-md-12  mt-3  d-grid">
                               <label
-                                htmlFor = "timeto"
+                                htmlFor="timeto"
                                 className="forsettinglabel"
                               >
                                 To
                               </label>
                               <input
-                                type = "time"
+                                type="time"
                                 className="forsettinginput mt-2 py-2 ps-3"
-                                id = "timeto"
-                                placeholder = " timeto"
+                                id="timeto"
+                                placeholder=" timeto"
                                 autoComplete="off"
                                 required
-                                value = {
-                                  to
-                                }
+                                value={to}
                                 onChange={(e) => {
                                   setto(e.target.value);
                                 }}
                               />
-                            </div>
+                            </div> */}
                             {/* hourlyRate */}
                             <div className="col-lg-6 col-md-12  mt-3  d-grid">
-                              <label htmlFor="hourlyRate" className="forsettinglabel">
-                              Hourly Rate
+                              <label
+                                htmlFor="hourlyRate"
+                                className="forsettinglabel"
+                              >
+                                Hourly Rate
                               </label>
                               <input
                                 type="number"
                                 className="forsettinginput mt-2 py-2 ps-3"
                                 id="hourlyRate"
-                                placeholder = " Hourly Rate"
+                                placeholder=" Hourly Rate"
                                 autoComplete="off"
                                 required
                                 value={hourlyRate}
@@ -376,7 +403,7 @@ function Addjob() {
                                 type="text"
                                 className="forsettinginput mt-2 py-2 ps-3"
                                 id="shift"
-                                placeholder = "shift"
+                                placeholder="shift"
                                 autoComplete="off"
                                 required
                                 value={shift}
@@ -386,26 +413,30 @@ function Addjob() {
                               />
                             </div>
                             {/* Description */}
-                              < div className = "col-lg-12 col-md-12  mt-3  d-grid" >
-                               <label label htmlFor = "Description" className = "forsettinglabel" >
-                              Description
-                               </label>
-                               <textarea
-                      className = "forsettinginput mt-2 py-2 ps-3 w-100"
-                      rows="5"
-                      cols="130"
-                      required
-                      id = "Description"
-                      value={Description}
-                      onChange={(e) => setDescription(e.target.value)}
-                      placeholder = "Add a description..."
-                    ></textarea>
-                    <p className="d-flex justify-content-end fortotalcharacter">
-                      20/1000
-                    </p>
-                    </div>
+                            <div className="col-lg-12 col-md-12  mt-3  d-grid">
+                              <label
+                                label
+                                htmlFor="Description"
+                                className="forsettinglabel"
+                              >
+                                Description
+                              </label>
+                              <textarea
+                                className="forsettinginput mt-2 py-2 ps-3 w-100"
+                                rows="5"
+                                cols="130"
+                                required
+                                id="Description"
+                                value={Description}
+                                onChange={(e) => setDescription(e.target.value)}
+                                placeholder="Add a description..."
+                              ></textarea>
+                              <p className="d-flex justify-content-end fortotalcharacter">
+                                20/1000
+                              </p>
+                            </div>
                             <button
-                              className="forsavesettingbtn fontfamilyCera py-2 my-4 col-12  rounded text-white border-0 mx-auto"
+                              className="forsavesettingbtn fontfamilyCera py-2 my-4 col-12 rounded text-white border-0 mx-auto"
                               type="submit"
                             >
                               Add
@@ -419,12 +450,12 @@ function Addjob() {
               </div>
               {/* )} */}
             </Box>
-              <ToastContainer />
+            <ToastContainer />
           </Box>
         </div>
       </div>
     </>
-  )
+  );
 }
 
-export default Addjob
+export default Addjob;

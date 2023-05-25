@@ -30,20 +30,22 @@ function Login() {
   // Main fuction of the compount
   const apicall = () =>{
     // console.log(email,password)
-  axios.post('https://gold-courageous-cocoon.cyclic.app/Login', {
+  axios.post('https://gold-courageous-cocoon.cyclic.app/admin/Login', {
       email:email,
       password:password,
-      // fcmToken:"tokenasfsf"
     }, {
-      // headers: {
-      //   secretKey: "rosx.AD-98dBXZnC7rb794a5593PjPQfzDsQgwy.BXF1LNPw4lZLK6BR6Kidf90.@$%hummstaffing???AD"
-      //       }
+      headers: {
+        autherization: `Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDFhY2Y1MjRiMTEwOTE2MGJlZTJlNTgiLCJlbWFpbCI6ImVAZ21haWwuY29tIiwicGFzc3dvcmQiOiJlIiwiaWF0IjoxNjc5NDc4NjEwfQ.Xpq15c030tTDIGny97EN9cGZt-SMzfTewOIc8qxMt_8`
+            }
     }).then((res)=>{
-      // console.log(resutl)
       localStorage.setItem("access_key",res.headers.bearer)
-      // console.log(res.headers.bearer);
-      console.log(res);
-      // console.log("name",res.data.userInfo.username);
+      console.log(res.data.tokens);
+      const tokeneee = res.data.tokens.length - 1
+      const tokendata =res.data.tokens[tokeneee];
+      // console.log(tokeneee);
+      console.log(tokendata.token);
+      localStorage.setItem("Tokensss", tokendata.token)
+  console.log("==============",localStorage.getItem("Tokensss"));
       setLoading(false);
       if (res.status === 200) {
         navigate("/Dashboard");
@@ -53,13 +55,9 @@ function Login() {
       } 
       else {
         setError("Invalid Username or Password!");
-        throw new Error(
-          `This is an HTTP error : The status is ${res.status}`
-        );
-        toast(`This is an HTTP error: The status is ${res.status}`);
       };
     }).catch((err)=>{
-      // console.log(err);
+      console.log(err);
       setLoading(false);
       setError("Invalid Username or Password!");
      
@@ -68,11 +66,9 @@ function Login() {
 
 
   function loginbutton(e) {
-  //   sessionStorage.setItem("email", email);
     e.preventDefault();
   setLoading(true);
   apicall();
-  // console.log("error")
   }
 
   const [passwordShown, setPasswordShown] = useState(false);
@@ -130,6 +126,12 @@ function Login() {
             </div>
 
           </form>
+
+          <div className="registerbtn mt-3 text-center">
+                        <p className='registerbtn'>Don't have an account ? <span className='Registersingup' onClick={()=>{
+                            navigate("/Singup");
+                        }}>Register</span></p>
+                    </div>
           <ToastContainer />
         </div>
 
