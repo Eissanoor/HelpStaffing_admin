@@ -44,7 +44,9 @@ background: #2144a4 !important;
   .css-1kf81xp-MuiPaper-root-MuiAppBar-root {
     box-shadow: none !important;
   }
-  
+  .css-yb0lig{
+    color: white !important;
+  }
   .cursor {
     cursor: pointer;
   }
