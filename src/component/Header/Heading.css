@@ -29,7 +29,10 @@ background: #2144a4 !important;
   .css-vwd6ro{
     background: #2144a4 !important;
   }
-  
+  .Navbar,
+  .css-hip9hq-MuiPaper-root-MuiAppBar-root {
+  background: #2144a4 !important;
+  }
   .css-1x7skt0 {
     box-shadow: none !important;
     background-color: #14198a !important;
