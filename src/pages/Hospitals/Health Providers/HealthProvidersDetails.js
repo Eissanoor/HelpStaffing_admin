@@ -55,21 +55,36 @@ function HealthProvidersDetails() {
   // main api function
   const [Loading, setLoading] = useState(true);
   const [dataget, setdataget] = useState([]);
-  const [specialityes, setspecialityes] = useState();
-
+  // const [specialityes, setspecialityes] = useState();
+  const [aboutme, setaboutme] = useState({})
+  const [category, setcategory] = useState({})
+  const [profile, setprofile] = useState({})
+  const [Location, setLocation] = useState({})
+  const [experience, setexperience] = useState({})
+  const [firstname, setfirstname] = useState({})
+  const [gender, setgender] = useState({})
+  const [qalification, setqalification] = useState({})
+  const [speciality, setspeciality] = useState({})
   const apicall = (_id) => {
     const id = sessionStorage.getItem("detailsprovied");
     // console.log(id);
-    axios.get(`/admin/provider/${id}`, {
+    axios.get(`https://gold-courageous-cocoon.cyclic.app/admin/allProviderprofile/${id}`, {
       headers: {
-        secretKey:
-          "rosx.AD-98dBXZnC7rb794a5593PjPQfzDsQgwy.BXF1LNPw4lZLK6BR6Kidf90.@$%hummstaffing???AD",
-        Authorization: `Bearer ${localStorage.getItem("access_key")}`,
+        autherization: `Bearer ${localStorage.getItem("Tokensss")}`,
       },
     })
       .then((res) => {
         setdataget(res.data);
-        setspecialityes(res.data.docs.speciality)
+        // setspecialityes(res.data.docs.speciality)
+ setaboutme(res.data.aboutme)
+ setprofile(res.data.profile)
+ setcategory(res.data.category)
+ setLocation(res.data.Location)
+
+ setexperience(res.data.experience)
+ setfirstname(res.data.firstname)
+ setgender(res.data.gender)
+ setspeciality(res.data.speciality)
         console.log(res);
         setLoading(false);
 
@@ -112,9 +127,9 @@ function HealthProvidersDetails() {
               ) : (
                 <div className="mt-5">
                   <div className="container-fluid  p-2">
-                    {
+                    {/* {
                       Object.keys(dataget).map((itme, index) => {
-                        return (
+                        return ( */}
                           <div className=" bg-white rounded p-2">
                             {/* Top section */}
                             <div className="row mx-auto mt-4 w-100">
@@ -123,7 +138,7 @@ function HealthProvidersDetails() {
                                   <div className=" forpackagehistory d-flex">
                                     <div className="my-auto">
                                       < img src={
-                                        dataget.docs.profileImage
+                                        profile
                                       }
                                         width='100%'
                                         height='60px'
@@ -132,33 +147,29 @@ function HealthProvidersDetails() {
                                     </div>
                                     <div className=" ms-3 mt-3">
                                       <p className="namedhealth fontfamilyRoboto">
-                                        {
-                                          dataget.docs.userName
-                                        }
+                                       {firstname}
                                         <span>
-                                          <img src={Hourlyrate} className='ms-2' />
+                                          {/* <img src={Hourlyrate} className='ms-2' /> */}
                                         </span>
                                       </p>
                                       <p className="gander fontfamilyRoboto">
                                         {
-                                          dataget.docs.gender
+                                          gender
                                         }
                                       </p>
                                       <p className="ratehealth fontfamilyInter">
-                                        {
+                                        {/* {
                                           dataget.docs.totalReviews
                                         }
                                         ({
                                           dataget.docs.totalRatings
-                                        })
-                                        <span>
-                                          <img src={start} />
-                                        </span>
+                                        }) */}
+                                        
                                       </p>
                                     </div>
                                   </div>
                                   {/*  */}
-                                  <div className="d-flex justify-conent-between mt-2">
+                                  {/* <div className="d-flex justify-conent-between mt-2">
                                     <p className="forcontactinfo">Hourly Rate</p>
                                     <h5 className="ms-auto fontfamilyRoboto forcontactinfoa">
                                       {
@@ -179,12 +190,12 @@ function HealthProvidersDetails() {
                                     <p className="ms-auto fontfamilyRoboto forcontactinfoa">
                                       Breast Surgeon
                                     </p>
-                                  </div>
+                                  </div> */}
                                   <div className="d-flex justify-conent-between mt-2">
                                     <p className="forcontactinfo">Experience</p>
                                     <p className="ms-auto fontfamilyRoboto forcontactinfoa">
                                       {
-                                        dataget.docs.experience
+                                       experience
                                       }
                                     </p>
                                   </div>
@@ -197,7 +208,7 @@ function HealthProvidersDetails() {
                                   <div className="d-flex justify-conent-between mt-2">
                                     <p className="forcontactinfo">Location</p>
                                     <p className="ms-auto fontfamilyRoboto forcontactinfoa colorblue ">
-                                      Washington, DC
+                                      {Location}
                                     </p>
                                   </div>
                                   <div className="d-flex justify-conent-between mt-2">
@@ -207,7 +218,7 @@ function HealthProvidersDetails() {
                                       {/* {
                                   dataget.docs.openToWork
                               } */}
-                                      {dataget.docs.openToWork === true ? <div> Open to work</div> : <div> Not open  to work</div>}
+                                      {/* {dataget.docs.openToWork === true ? <div> Open to work</div> : <div> Not open  to work</div>} */}
                                       {/* Open to work */}
                                     </p>
                                   </div>
@@ -238,12 +249,7 @@ function HealthProvidersDetails() {
                                       About me
                                     </h6>
                                     <p className="mt-2 forpendingdescription">
-                                      {
-                                        dataget.docs.about
-                                      }
-                                      {/* {
-                                  dataget.docs.about === true ? < div > Open to work </div> : <div> Not open  to work</div >
-                                } */}
+                                     {aboutme}
 
                                     </p>
                                   </div>
@@ -252,7 +258,7 @@ function HealthProvidersDetails() {
                             </div>
 
                             {/* second section */}
-                            <div className="row mx-auto mt-4 h-100 w-100">
+                            {/* <div className="row mx-auto mt-4 h-100 w-100">
                               <div className="col-sm-12 col-md-12 col-lg-6 col-xl-6 ps-0">
                                 <div className="forbg-everyone bg rounded p-3">
                                   <p className="  forpendingdescription">
@@ -308,13 +314,13 @@ dataget.docs.speciality.map((item, i) => {
                                     <h6 className=" forpackagehistory my-2">
                                       Expertise
                                     </h6>
+                                    <p>
+                                      {
+                                        category
+                                      }
+                                    </p>
 
-                                    {
-                                      dataget.docs.speciality.map((item, i) => {
-                                        return (
-
-
-                                          <Steps
+                                          {/* <Steps
                                             className="titledascription fontfamilyRoboto"
                                             progressDot
                                             current={4}
@@ -336,22 +342,21 @@ dataget.docs.speciality.map((item, i) => {
                                   title="General Surgeon"
                                   description=" 2Years"
                                 /> */}
-                                          </Steps>
+                                          {/* </Steps> */} 
 
 
-                                        )
-                                      })
-                                    }
+                                       
+
                                   </p>
                                 </div>
                               </div>
 
 
-                            </div>
+                            {/* </div> */}
 
                             {/* card section */}
                             <div className="row w-100 mt-4  forbg-everyone bg rounded  mx-auto ">
-                              {
+                              {/* {
 
                                 dataget.docs.certification.map((itee, i) => {
                                   return (
@@ -394,12 +399,12 @@ dataget.docs.speciality.map((item, i) => {
                                     </div>
                                   )
                                 })
-                              }
+                              } */}
 
                             </div>
 
                             {/* Reviews */}
-                            <div className="forbg-everyone bg rounded p-4 mt-4">
+                            {/* <div className="forbg-everyone bg rounded p-4 mt-4">
                               <div className="d-flex mt-4">
                                 <h6 className="my-auto apprating text-black me-3">
                                   4.0
@@ -490,7 +495,7 @@ dataget.docs.speciality.map((item, i) => {
                                   (00)
                                 </p>
                               </div>
-                            </div>
+                            </div> */}
 
                             {/* Detail profile */}
                             <div className="">
@@ -827,9 +832,9 @@ dataget.docs.speciality.map((item, i) => {
                               </div>
                             </div>
                           </div>
-                        );
+                        {/* );
                       })
-                    }
+                    } */}
                   </div>
                 </div>
               )}

@@ -40,20 +40,35 @@ function Hospitalview() {
   // main api function
   const [Loading, setLoading] = useState(true);
   const [dataget, setdataget] = useState({});
+  const [aboutme, setaboutme] = useState({})
+  const [category, setcategory] = useState({})
+    const [profile, setprofile] = useState({})
+     const [Location, setLocation] = useState({})
+     const [experience, setexperience] = useState({})
+     const [firstname, setfirstname] = useState({})
+     const [gender, setgender] = useState({})
+     const [qalification, setqalification] = useState({})
+      const [speciality, setspeciality] = useState({})
   const apicall = (_id) => {
-    const id = sessionStorage.getItem("detailshosta");
+    const id = localStorage.getItem("detailshosta");
     console.log(id);
-    axios
-      .get(`/admin/hospital/${id}`, {
-        headers: {
-          secretKey:
-            "rosx.AD-98dBXZnC7rb794a5593PjPQfzDsQgwy.BXF1LNPw4lZLK6BR6Kidf90.@$%hummstaffing???AD",
-          Authorization: `Bearer ${localStorage.getItem("access_key")}`,
-        },
+    axios.get(`https://gold-courageous-cocoon.cyclic.app/admin/allhospitalprofile/${id}`, {
+       headers: {
+         autherization: `Bearer ${localStorage.getItem("Tokensss")}`,
+       },
       })
       .then((res) => {
-        setdataget(res.data);
+        setdataget(res);
         console.log(res);
+        setaboutme(res.data.aboutme)
+         setprofile(res.data.profile)
+         setcategory(res.data.category)
+         setLocation(res.data.Location)
+
+          setexperience(res.data.experience)
+          setfirstname(res.data.firstname)
+          setgender(res.data.gender)
+          setspeciality(res.data.speciality)
         setLoading(false);
       })
       .catch((err) => {
@@ -135,66 +150,56 @@ function Hospitalview() {
                 <Lottie options={defaultOptions} height={400} width={400} />
               ) : (
                 <div>
-                  {Object.keys(dataget).map((itme, index) => {
-                    return (
+                  {/* {
+                  dataget && dataget.map((itme, index) => {
+                    return ( */}
                       <div className="mt-5">
                         {/* Top section */}
                         <div className="position-relative my-4 ">
                           <div className="position-absolute">
                             <div className="d-flex topimg">
-                              <img
+                              {/* <img
                                 className="position- forimg rounded-circle"
-                                src={dataget.docs.profileImage}
+                                src = {profile}
                                 alt="imge"
                                 width="200px"
                                 height="200px"
-                              />
+                              /> */}
 
-                              {/* {
-    dataget.docs.profileImage === true ? < div >  <img
-                                className="position- forimg rounded-circle"
-                                src={dataget.docs.Hostprofile}
-                                alt="imge"
-                                width='200px'
-                                height='200px'
-                              /> </div> : <div>  <img
-                                className="position- forimg rounded-circle"
-                                src={Hostprofile}
-                                alt="imge"
-                                width='200px'
-                                height='200px'
-                              /></div >
-  } */}
 
-                              <div className="mt-auto fortext">
-                                <h6 className="typestableHostipal fontfamilyRoboto fontstyle">
-                                  {dataget.docs.hospitalName}
+                              <div className="mt-auto fortext ">
+                                <h6 className="typestableHostipal fontfamilyRoboto fontstyle py-3 px-3 ">
+                                  {firstname}
                                 </h6>
                                 <div className="d-flex">
                                   <h6 className="my-auto apprating color7  me-3">
-                                    {dataget.docs.totalRatings}
+                                    {/* {
+                                      itme.totalRatings
+                                    } */}
                                   </h6>
-                                  <Rate
+                                  {/* <Rate
                                     allowClear={false}
                                     outlined={true}
                                     defaultValue={dataget.docs.totalRatings}
                                     className="my-auto"
                                     width={20}
                                     height={20}
-                                  />
+                                  /> */}
 
                                   <h6 className="my-auto app-review  ms-3">
-                                    {dataget.docs.totalReviews}
+                                    {/* {dataget.docs.totalReviews} */}
                                   </h6>
                                 </div>
                               </div>
                             </div>
                           </div>
-                          <img
-                            src={dataget.docs.coverImage}
+                          {/* <img
+                            src = {
+                              itme.datagetcoverImage
+                            }
                             width="100%"
                             height="310px"
-                          />
+                          /> */}
                         </div>
 
                         <div className="container-fluid p-2 mt-5">
@@ -205,58 +210,34 @@ function Hospitalview() {
                                 {/* {
                                   dataget.docs.address
                                 } */}
-                                {dataget.docs.address ? (
+                                {/* {dataget.docs.address ? (
                                   <div>{dataget.docs.address}</div>
                                 ) : (
                                   <div> Not founded the address</div>
-                                )}
+                                )} */}
                               </p>
-                              <h6 className="Hospitalviewtoppro fw-bolder colorblue fontstyle fontfamilyRoboto">
+                              <h6 className="Hospitalviewtoppro fw-bolder colorblue fontstyle mt-5 fontfamilyRoboto">
                                 About us
                               </h6>
 
-                              <div className="d-flex">
-                                {dataget.docs.fields.map((it, i) => {
-                                  return (
-                                    <div className="d-flex" key={i}>
-                                      <p className="Cardiologist px-3 py-2 rounded text-black me-2">
-                                        {it}
-                                      </p>
-                                    </div>
-                                  );
-                                })}
-                              </div>
-
                               <p className="Hospitalviewtoppro text-break w-100 h-100  fontstyle fontfamilyRoboto">
-                                {/* {dataget.docs.about} */}
-                                 {
-                                   dataget.docs.about ? (
-                                  <div>{dataget.docs.about}</div>
-                                ) : (
-                                  <div> Not founded  the about</div>
-                                )}
+                             
+                                  <div>{aboutme}</div>
+                              
                               </p>
 
-                              {/* <div className='row'>
-    <div className='col-lg-6 col-md-6 col-sm-11 '>
-        <div className='d-flex justify-content-between p-2 tableheadingHostipal rounded mx-2'>
-        <p className='typestableHostipal fontfamilyRoboto fontstyle color mt-2' >Type</p>
-        <p  className='typestableHostipal fontfamilyRoboto fontstyle color4 mt-2' >Private</p>
-        </div>
-    </div>
-</div> */}
 
                               <div className="d-flex mt-5">
                                 <table className="table w-50">
                                   <tr className=" p-2  rounded mx-2">
                                     <td>
                                       <p className="typestableHostipal fontfamilyRoboto fontstyle color mt-2">
-                                        Type
+                                        Category
                                       </p>
                                     </td>
                                     <td>
                                       <p className="typestableHostipal fontfamilyRoboto fontstyle color4 mt-2">
-                                        {dataget.docs.type}
+                                        {category}
                                       </p>
                                     </td>
                                   </tr>
@@ -275,27 +256,42 @@ function Hospitalview() {
                                   <tr className=" p-2  rounded mx-2">
                                     <td>
                                       <p className="typestableHostipal fontfamilyRoboto fontstyle color mt-2">
-                                        Email
+                                        Location
                                       </p>
                                     </td>
                                     <td>
                                       <p className="typestableHostipal fontfamilyRoboto fontstyle color4 mt-2">
-                                        {dataget.docs.email}
+                                       {Location}
                                       </p>
                                     </td>
                                   </tr>
                                   <tr className=" p-2  rounded mx-2">
                                     <td>
                                       <p className="typestableHostipal fontfamilyRoboto fontstyle color mt-2">
-                                        website
+                                        speciality
                                       </p>
                                     </td>
                                     <td>
                                       <p className="typestableHostipal fontfamilyRoboto fontstyle colorblue mt-2">
-                                        {dataget.docs.website}
+                                      {speciality}
                                       </p>
                                     </td>
                                   </tr>
+
+                                  <tr className=" p-2  rounded mx-2">
+                                    <td>
+                                      <p className="typestableHostipal fontfamilyRoboto fontstyle color mt-2">
+                                        Experience
+                                      </p>
+                                    </td>
+                                    <td>
+                                      <p className="typestableHostipal fontfamilyRoboto fontstyle colorblue mt-2">
+                                      {experience}
+                                      </p>
+                                    </td>
+                                  </tr>
+                                 
+
                                 </table>
 
                                 <table className="">
@@ -320,31 +316,31 @@ function Hospitalview() {
                                           </a>
                                         </div>
                                       </div>
-                                      {/* <img
-                                src={loactionimg}
+                                      <img
+                                // src={loactionimg}
                                 alt='loaction'
                                 width='100%'
-                              /> */}
+                              />
                                     </td>
                                   </tr>
                                   <tr>
                                     <td className="d-flex mt-1">
                                       <div className="d-flex">
-                                        {dataget.docs.images.map((ite, i) => {
-                                          return (
+                                        {/* {dataget.docs.images.map((ite, i) => {
+                                          return ( */}
                                             <div
                                               className="d-flex w-100 overflow-scroll "
-                                              key={i}
+                                              // key={i}
                                             >
                                               <img
-                                                src={ite}
+                                                src={profile}
                                                 width="100px"
                                                 alt="loaction"
                                                 className="me-1"
                                               />
                                             </div>
-                                          );
-                                        })}
+                                          {/* );
+                                        })} */}
                                       </div>
                                     </td>
                                   </tr>
@@ -353,227 +349,9 @@ function Hospitalview() {
                             </div>
                           </div>
 
-                          {/*  Job History */}
-                          <div className="mt-4">
-                            <div className="px-3 d-flex justify-content-between">
-                              <div className="Historyjobmain color5 py-1 d-flex">
-                                <p className="Historyjob color6 fw-bold fontfamilyInter fontstyle me-2">
-                                  Job History
-                                </p>
-
-                                <Dropdown
-                                  overlay={menu}
-                                  className=""
-                                  trigger={["click"]}
-                                >
-                                  <a
-                                    onClick={(e) => e.preventDefault()}
-                                    className="color5"
-                                  >
-                                    <Space>
-                                      All
-                                      <DownOutlined />
-                                    </Space>
-                                  </a>
-                                </Dropdown>
-                              </div>
-                              <UpOutlined
-                                className="mt-2"
-                                onClick={() => setshow2(!show2)}
-                              />
-                            </div>
-                            {show2 ? (
-                              <div className="bg-white rounded">
-                                <div className="py-3 px-2">
-                                  <Comment
-                                    //   actions={actions}
-                                    author={
-                                      <div className=" py-2  ">
-                                        <h6 className="authorname fontfamily text-black">
-                                          AFIC (NIHD)
-                                        </h6>
-                                        <p className="authordetail fontfamily ">
-                                          Child Specialist, MBBS, FCPS
-                                        </p>
-                                      </div>
-                                    }
-                                    avatar={
-                                      <div div className=" py-2 ms-1 ">
-                                        <Avatar src={imag} alt="img" />
-                                      </div>
-                                    }
-                                    content={
-                                      <>
-                                        <p className="contentprog fontfamily text-black">
-                                          Quam arcu amet lorem molestie in vel.
-                                          Risus massa sagittis, leo pretium.
-                                          Laoreet ullamcorper arcu pellentesque
-                                          amet ultrices libero neque nulla.
-                                          Tellus cum sollicitudin elit velit,
-                                          donec elementum rhoncus. Vulputate mi
-                                          imperdiet congue urna amet sed
-                                          convallis pellentesque dolor. Neque
-                                          bibendum pulvinar tempus, sit mattis
-                                          dictum eu. Turpis quis odio vel libero
-                                          adipiscing enim, egestas. Sollicitudin
-                                          vulputate eget massa leo leo
-                                          scelerisque id at elit. Placerat orci
-                                          non....
-                                        </p>
-                                        <div className="d-flex justify-content-between mt-3 me-2">
-                                          <span className="fontfamily ">
-                                            <span className="firstsec  text-black bolder">
-                                              $95.00{" "}
-                                            </span>
-                                            / hour
-                                          </span>
-                                          |
-                                          <span className="fontfamily">
-                                            <span className="firstsec  text-black bolder">
-                                              2weeks
-                                            </span>
-                                            / Duration
-                                          </span>
-                                          |
-                                          <span className="fontfamily ">
-                                            <span className="firstsec  text-black bolder">
-                                              124{" "}
-                                            </span>
-                                            / Total hours
-                                          </span>
-                                          |
-                                          <span className="fontfamily">
-                                            <span className="firstsec  text-black bolder">
-                                              12-10-22{" "}
-                                            </span>
-                                            / Posted on
-                                          </span>
-                                          |
-                                          <span className="fontfamily">
-                                            <span className="firstsec  text-black bolder">
-                                              Evening{" "}
-                                            </span>
-                                            / Shift
-                                          </span>
-                                        </div>
-                                      </>
-                                    }
-                                    datetime={
-                                      <Tooltip>
-                                        <span>
-                                          <div className="alljobactionimag d-flex justify-content-around py-1 mt-auto w-100 px-2 rounded ">
-                                            <img
-                                              className="cursor px-2"
-                                              onClick={() => {
-                                                navigate("/JobDetails");
-                                              }}
-                                              src={eye}
-                                            />
-                                            {/* <img  className="cursor px-2" src={deleteicon} /> */}
-                                            {/* <p className='px-2'><Delete/></p> */}
-                                          </div>
-                                        </span>
-                                      </Tooltip>
-                                    }
-                                  />
-                                  <Divider />
-                                  <Comment
-                                    //   actions={actions}
-                                    author={
-                                      <div className=" py-2  ">
-                                        <h6 className="authorname fontfamily text-black">
-                                          AFIC (NIHD)
-                                        </h6>
-                                        <p className="authordetail fontfamily ">
-                                          Child Specialist, MBBS, FCPS
-                                        </p>
-                                      </div>
-                                    }
-                                    avatar={
-                                      <div div className=" py-2 ms-1 ">
-                                        <Avatar src={imag} alt="img" />
-                                      </div>
-                                    }
-                                    content={
-                                      <>
-                                        <p className="contentprog fontfamily text-black">
-                                          Quam arcu amet lorem molestie in vel.
-                                          Risus massa sagittis, leo pretium.
-                                          Laoreet ullamcorper arcu pellentesque
-                                          amet ultrices libero neque nulla.
-                                          Tellus cum sollicitudin elit velit,
-                                          donec elementum rhoncus. Vulputate mi
-                                          imperdiet congue urna amet sed
-                                          convallis pellentesque dolor. Neque
-                                          bibendum pulvinar tempus, sit mattis
-                                          dictum eu. Turpis quis odio vel libero
-                                          adipiscing enim, egestas. Sollicitudin
-                                          vulputate eget massa leo leo
-                                          scelerisque id at elit. Placerat orci
-                                          non....
-                                        </p>
-                                        <div className="d-flex justify-content-between mt-3 me-2">
-                                          <span className="fontfamily ">
-                                            <span className="firstsec  text-black bolder">
-                                              $95.00{" "}
-                                            </span>
-                                            / hour
-                                          </span>
-                                          |
-                                          <span className="fontfamily">
-                                            <span className="firstsec  text-black bolder">
-                                              2weeks
-                                            </span>
-                                            / Duration
-                                          </span>
-                                          |
-                                          <span className="fontfamily ">
-                                            <span className="firstsec  text-black bolder">
-                                              124{" "}
-                                            </span>
-                                            / Total hours
-                                          </span>
-                                          |
-                                          <span className="fontfamily">
-                                            <span className="firstsec  text-black bolder">
-                                              12-10-22{" "}
-                                            </span>
-                                            / Posted on
-                                          </span>
-                                          |
-                                          <span className="fontfamily">
-                                            <span className="firstsec  text-black bolder">
-                                              Evening{" "}
-                                            </span>
-                                            / Shift
-                                          </span>
-                                        </div>
-                                      </>
-                                    }
-                                    datetime={
-                                      <Tooltip>
-                                        <span>
-                                          <div className="alljobactionimag d-flex justify-content-around py-1 mt-auto w-100 px-2 rounded ">
-                                            <img
-                                              className="cursor px-2"
-                                              onClick={() => {
-                                                navigate("/JobDetails");
-                                              }}
-                                              src={eye}
-                                            />
-                                            {/* <img  className="cursor px-2" src={deleteicon} /> */}
-                                            {/* <p className='px-2'><Delete/></p> */}
-                                          </div>
-                                        </span>
-                                      </Tooltip>
-                                    }
-                                  />
-                                </div>
-                              </div>
-                            ) : null}
-                          </div>
+                        
                           {/* Reviews */}
-                          <div className="mt-4">
+                          {/* <div className="mt-4">
                             <div className="px-3">
                               <div className="Historyjobmain color5 py-1 d-flex  justify-content-between">
                                 <p className="Historyjob color6 fw-bold fontfamilyInter fontstyle me-2">
@@ -582,13 +360,13 @@ function Hospitalview() {
                                 <UpOutlined onClick={() => setshow(!show)} />
                               </div>
                             </div>
-                          </div>
-                          {show ? (
-                            //    <Results />
-                            <div className="bg-white rounded">
-                              <div className="py-3 px-2">
+                          </div> */}
+                          {/* {show ? ( */}
+                            {/* //    <Results /> */}
+                            {/* // <div className="bg-white rounded"> */}
+                            {/* //   <div className="py-3 px-2"> */}
                                 {/* Reviews */}
-                                <div className="forbg-everyone bg rounded p-4 ">
+                                {/* <div className="forbg-everyone bg rounded p-4 ">
                                   <div className="d-flex">
                                     <h6 className="my-auto apprating text-black me-3">
                                       4.0
@@ -679,9 +457,9 @@ function Hospitalview() {
                                       (00)
                                     </p>
                                   </div>
-                                </div>
+                                </div> */}
                                 {/* Detail profile */}
-                                <div className="">
+                                {/* <div className="">
                                   <div className="forbg-everyone bg rounded p-4 mt-4">
                                     <div>
                                       <div className="d-flex">
@@ -755,10 +533,10 @@ function Hospitalview() {
                                   <button className="w-100 border-0 rounded py-2 mt-2 text-white bgcolor fontfamilyInter fontstyle seebtn">
                                     See All
                                   </button>
-                                </div>
-                              </div>
+                                </div> */}
+                              {/* </div>
                             </div>
-                          ) : null}
+                          ) : null} */}
 
                           <div className="row mt-3 lastcardHospite bg-white p-2  mx-auto rounded">
                             <div className="col-sm-4 col-md-4 col-lg-3 col-xl-3 my-2">
@@ -772,7 +550,7 @@ function Hospitalview() {
                             </div>
                             <div className="col-sm-4 col-md-4 col-lg-3 col-xl-3 my-2">
                               <div className="d-flex">
-                                <img src={time} height="30px" />
+                                <img src={speciality} height="30px" />
                                 <h6 className="Jobdetailsnumber text-black ms-2">
                                   $3,000
                                 </h6>
@@ -804,8 +582,8 @@ function Hospitalview() {
                           </div>
                         </div>
                       </div>
-                    );
-                  })}
+                  {/* //   );
+                  // })} */}
                 </div>
               )}
             </Box>

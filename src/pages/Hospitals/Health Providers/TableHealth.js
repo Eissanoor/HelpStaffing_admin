@@ -57,7 +57,7 @@ function TableHealth() {
  const [length, setlength] = useState("");
  const [rowss, setRows] = React.useState([])
   const apicall = () => {
-    axios.get(`https://gold-courageous-cocoon.cyclic.app/admin/allProvider`,
+    axios.get(`https://gold-courageous-cocoon.cyclic.app/admin/allProviderprofile`,
        {
           headers: {
             autherization: `Bearer ${localStorage.getItem("Tokensss")}`,
@@ -118,8 +118,8 @@ let N=0;
                       </TableCell>
                       {/* <TableCell className="tablehad">ID</TableCell> */}
                       <TableCell className="tablehad">Provider Name</TableCell>
-                      <TableCell className="tablehad">Email</TableCell>
-                      <TableCell className="tablehad">Phone number</TableCell>
+                      <TableCell className="tablehad">Experience</TableCell>
+                      <TableCell className="tablehad">Location</TableCell>
 
                       <TableCell className="tablehad">Expertise</TableCell>
                       <TableCell className="tablehad">Action</TableCell>
@@ -135,19 +135,19 @@ let N=0;
                               {/* {N+=1} */}
                             </TableCell>
                             <TableCell className = "fortbbody rounded-circle" >
-                               <Avatar   src = {itme.profileImage} className="me-2"  />
+                               <Avatar   src = {itme.profile} className="me-2"  />
                              {
-                               itme.fullname
+                               itme.firstname
 }
                             </TableCell>
 
                             <TableCell className="fortbbody">
                              {
-                               itme.email
+                               itme.experience
 }
                             </TableCell>
                             <TableCell className="fortbbody">
-                              +92311234567
+                            {itme.Location}
                             </TableCell>
 
                             <TableCell className="fortbbody">

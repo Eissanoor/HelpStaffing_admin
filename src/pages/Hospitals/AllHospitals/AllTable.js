@@ -55,15 +55,14 @@ const [length, setlength] = useState("");
 const [currentPage, setCurrentPage] = useState(0);
 const [rowss, setRows] = React.useState([])
   const apicall = () => {
-    axios
-      .get("https://gold-courageous-cocoon.cyclic.app/admin/allHospital", {
+    axios.get("https://gold-courageous-cocoon.cyclic.app/admin/allhospitalprofile", {
         headers: {
           autherization: `Bearer ${localStorage.getItem("Tokensss")}`,
         },
       })
       .then((res) => {
         setdataget(res.data);
-        console.log(res.data);
+        console.log('all',res.data);
          setRows(res.data);
          setlength(res.data.length);
         setLoading(false);
@@ -108,9 +107,9 @@ const [rowss, setRows] = React.useState([])
                       </TableCell>
                       {/* <TableCell className="tablehad">ID</TableCell> */}
                       <TableCell className="tablehad">Provider Name</TableCell>
-                      <TableCell className="tablehad">Email</TableCell>
-                      <TableCell className="tablehad">Type</TableCell>
-                      <TableCell className="tablehad">Fields</TableCell>
+                      <TableCell className="tablehad">experience</TableCell>
+                      <TableCell className="tablehad">Qalification</TableCell>
+                      <TableCell className="tablehad">Speciality</TableCell>
                       <TableCell className="tablehad">Action</TableCell>
                     </TableRow>
                   </TableHead>
@@ -121,29 +120,29 @@ const [rowss, setRows] = React.useState([])
                         return (
                           <TableRow className="">
                             <TableCell numeric className="fortbbody">
-                              {itme._id}
+                              {itme.Id}
                             </TableCell>
                             <TableCell className="fortbbody ">
                               <img
-                                src={itme.profileImage}
+                                src={itme.profile}
                                 width="35px"
                                 height="35px"
                                 className="me-2 rounded-circle"
                                 alt=""
                                 srcset=""
                               />
-                              {itme.name}
+                              {itme.firstname}
                             </TableCell>
 
                             <TableCell className="fortbbody">
-                              {itme.email}
+                              {itme.experience}
                             </TableCell>
                             <TableCell className="fortbbody">
-                              {itme.type}
+                              {itme.qalification}
                             </TableCell>
 
                             <TableCell className="fortbbody">
-                              {itme.fields}
+                              {itme.speciality}
                             </TableCell>
                             <TableCell numeric className="fortbbody ">
                               <div className="actionimag d-flex justify-content-around py-2 rounded w-100">
@@ -153,7 +152,7 @@ const [rowss, setRows] = React.useState([])
                                   src={eye}
                                   onClick={() => {
                                     navigate(`/Hospitalview/${itme._id}`);
-                                    sessionStorage.setItem("detailshosta",itme._id);
+                                    localStorage.setItem("detailshosta",itme._id);
                                     // navigate("/Hospitalview");
                                   }}
                                 />
